@@ -9,24 +9,24 @@ Data.new = function(position, cluster)
 	instance.__cluster = cluster
 	instance.__previous_cluster = 0
 
-	instance.get_position = function( )
-		return instance.__position
+	instance.get_position = function(self)
+		return self.__position
 	end
 
-	instance.get_cluster = function( )
-		return instance.__cluster
+	instance.get_cluster = function(self)
+		return self.__cluster
 	end
 
-	instance.set_cluster = function(value)
-		instance.__cluster = value
+	instance.set_cluster = function(self, value)
+		self.__cluster = value
 	end
 
-	instance.get_previous_cluster = function( )
-		return instance.__previous_cluster
+	instance.get_previous_cluster = function(self)
+		return self.__previous_cluster
 	end
 
-	instance.set_previous_cluster = function(value)
-		instance.__previous_cluster = value
+	instance.set_previous_cluster = function(self, value)
+		self.__previous_cluster = value
 	end
 
 end
