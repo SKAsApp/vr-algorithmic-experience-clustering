@@ -406,7 +406,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: 349dbfb2b1cde4364ace436020bdb9b0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -532,7 +532,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: 36fd6bca1b0924755a873063a88931ce, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -658,7 +658,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: 6114b8fa88c294a38999729006bdb57f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -784,7 +784,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: 6bc3ed6eb6c9149bfabf522422f2feda, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -910,7 +910,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: facf5d630eeb24b6087c41be2bd40454, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1118,7 +1118,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: 9c3bdf1f3244445c0b113f359f9d08ef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1244,7 +1244,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: c38f25732906f4c6b81c343da4341cb7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1496,7 +1496,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: 9f1765a0af8af4b0aadd867baee587f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1622,7 +1622,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: b4e637757b412400cbb7307c380808f0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1748,7 +1748,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: ea27ec91cf4504170933287f250f584a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1874,7 +1874,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: 8bc0155f0ad694ee59344d83f2be0871, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2000,7 +2000,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: 9c12df0cc16c647578819f2b05c3681f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2126,7 +2126,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: a200da2ede299453ba9a35bd49a219fb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2252,7 +2252,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: 718d755295f00468b895bbbd1d7e86bb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2487,7 +2487,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: bc3934df786044c6f8cdbe0c93ff52de, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2613,7 +2613,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: 25cabb4de41bf454b8512466199b0109, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2739,7 +2739,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: d976f9604ff184a14a13b9d671dcac0c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2991,7 +2991,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25796124731fa4cb4a00e57c6a7986ce, type: 2}
+  - {fileID: 2100000, guid: 882105aeb143e48b4ade4b8ccb6c9999, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3062,25 +3062,35 @@ MonoBehaviour:
     modelDataOtherLicenseUrl: 
     scriptLicenseType: 8
     scriptOtherLicenseUrl: GPLv3
-    scriptWriteProtected: 0
+    scriptWriteProtected: 1
     scriptEnableDebugging: 0
     scriptFormat: 0
   Scripts:
   - name: main
     mimeType: 0
     targetEngine: 0
-    filePath: 
-    source: print("Hello World!")
-  - name: main
+    filePath: /Volumes/SK SSD/Apps/Programing/Unity/Projects/VciAlgorithmicExperienceClustering/VciAlgorithmicExperienceClustering/Assets/Scripts/main.lua
+    source: 
+  - name: controller
     mimeType: 0
     targetEngine: 0
-    filePath: 
-    source: print("Hello World!")
-  - name: main
+    filePath: /Volumes/SK SSD/Apps/Programing/Unity/Projects/VciAlgorithmicExperienceClustering/VciAlgorithmicExperienceClustering/Assets/Scripts/controller.lua
+    source: 
+  - name: clustering
     mimeType: 0
     targetEngine: 0
-    filePath: 
-    source: print("Hello World!")
+    filePath: /Volumes/SK SSD/Apps/Programing/Unity/Projects/VciAlgorithmicExperienceClustering/VciAlgorithmicExperienceClustering/Assets/Scripts/clustering.lua
+    source: 
+  - name: data
+    mimeType: 0
+    targetEngine: 0
+    filePath: /Volumes/SK SSD/Apps/Programing/Unity/Projects/VciAlgorithmicExperienceClustering/VciAlgorithmicExperienceClustering/Assets/Scripts/data.lua
+    source: 
+  - name: function_tools
+    mimeType: 0
+    targetEngine: 0
+    filePath: /Volumes/SK SSD/Apps/Programing/Unity/Projects/VciAlgorithmicExperienceClustering/VciAlgorithmicExperienceClustering/Assets/Scripts/function_tools.lua
+    source: 
 --- !u!4 &1891612998
 Transform:
   m_ObjectHideFlags: 0
