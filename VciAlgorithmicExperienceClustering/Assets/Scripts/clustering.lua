@@ -1,6 +1,7 @@
 local Data = require "data"
 local function_tools = require "function_tools"
 
+
 -- Clusteringクラス（？）
 -- 	k-means計算機
 local Clustering = { }
@@ -34,14 +35,14 @@ Clustering.new = function(positions, k)
 
 	instance.k_means = function(self)
 		-- クラスタリングの計算をします。
-		self.__calculate_centers( )
-		self.__re_calculate_cluster( )
+		self:__calculate_centers( )
+		self:__re_calculate_cluster( )
 	end
 
 	instance.__calculate_centers = function(self)
 		-- すべてのクラスターの重心を計算します。
 		for i = 0, self.__k - 1 do
-			self.__calculate_center(i)
+			self:__calculate_center(i)
 		end
 	end
 
@@ -63,9 +64,9 @@ Clustering.new = function(positions, k)
 		-- クラスターを再割当てします。
 		-- すべてのデータiに対して，それぞれのクラスターjとの距離を計算 → 距離が1番近いクラスターに再割当て
 		for i, data in pairs(self.__datas) do
-			local distances = self.__calculate_data_clusters_distance(i, data)
+			local distances = self:__calculate_data_clusters_distance(i, data)
 			local minimum_distance = function_tools.minimum_absolute(distances)
-			self.__update_new_cluster(i, minimum_distance)
+			self:__update_new_cluster(i, minimum_distance)
 		end
 	end
 
