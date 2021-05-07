@@ -55,6 +55,22 @@ function_tools.average = function(from_array)
 end
 
 
+function_tools.average_vec3 = function(from_array)
+	-- vec3配列の平均値を返します。
+	local sum_x = 0.0
+	local sum_y = 0.0
+	local sum_z = 0.0
+	local count = 0
+	for key, value in pairs(from_array) do
+		count = count + 1
+		sum_x = sum_x + value.x
+		sum_y = sum_y + value.y
+		sum_z = sum_z + value.z
+	end
+	return Vector3.__new(sum_x / count, sum_y / count, sum_z / count)
+end
+
+
 function_tools.minimum_absolute = function(from_array)
 	-- 配列の絶対値が最小のインデックスと，その値を配列で返します。
 	local result = { }

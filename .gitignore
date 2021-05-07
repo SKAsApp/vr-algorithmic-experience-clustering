@@ -68,13 +68,11 @@ crashlytics-build.properties
 
 # 読み込んだもの／Imported
 VRM/
-VRM.meta
 Effekseer/
-Effekseer.meta
 NAudio/
-NAudio.meta
 VCI/
-VCI.meta
+VRMShaders/
+UniGLTF/
 
 # 再配布禁止素材／no redistribution source
 

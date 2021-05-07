@@ -13,6 +13,10 @@ Data.new = function(position, cluster)
 		return self.__position
 	end
 
+	instance.set_position = function(self, value)
+		self.__position = value
+	end
+
 	instance.get_cluster = function(self)
 		return self.__cluster
 	end
@@ -29,5 +33,7 @@ Data.new = function(position, cluster)
 		self.__previous_cluster = value
 	end
 
+
+	return instance
 end
 return Data

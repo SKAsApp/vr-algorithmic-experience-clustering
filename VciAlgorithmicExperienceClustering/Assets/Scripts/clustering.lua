@@ -11,6 +11,7 @@ Clustering.new = function(positions, k)
 	local instance = { }
 	instance.__positions = positions
 	instance.__length = #positions
+	print("clusteringデータ数：" .. #positions .. " 個")
 	instance.__datas = { }
 	instance.__k = k
 	instance.__centers = { }
@@ -21,15 +22,16 @@ Clustering.new = function(positions, k)
 
 	instance.initialize = function(self)
 		-- テキトーにクラスター番号を割り振ります。
+		print("initialize：テキトーにクラスター番号を割り振ります。")
 		local separation = math.floor(self.__length / self.__k)
 		for i = 0, separation do
-			self.datas[i] = Data.new(self.__positions[i], 0)
+			self.__datas[i] = Data.new(self.__positions[i], 0)
 		end
 		for i = separation + 1, separation * 2 do
-			self.datas[i] = Data.new(self.__positions[i], 1)
+			self.__datas[i] = Data.new(self.__positions[i], 1)
 		end
-		for i = separation * 2 + 1, self.__length - 1 do
-			self.datas[i] = Data.new(self.__positions[i], 2)
+		for i = separation * 2 + 1, self.__length do
+			self.__datas[i] = Data.new(self.__positions[i], 2)
 		end
 	end
 
@@ -57,14 +59,16 @@ Clustering.new = function(positions, k)
 			table.insert(positions_i, value:get_position( ))
 		end
 		-- 重心を更新
-		self.__centers[i] = function_tools.average(positions_i)
+		self.__centers[i] = function_tools.average_vec3(positions_i)
+		print("重心" .. i .. "：(" .. self.__centers[i].x .. ", " .. self.__centers[i].y .. ", " .. self.__centers[i].z .. ")")
 	end
 
 	instance.__re_calculate_cluster = function(self)
 		-- クラスターを再割当てします。
+		print("クラスターを再割当てします。")
 		-- すべてのデータiに対して，それぞれのクラスターjとの距離を計算 → 距離が1番近いクラスターに再割当て
 		for i, data in pairs(self.__datas) do
-			local distances = self:__calculate_data_clusters_distance(i, data)
+			local distances = self:__calculate_data_clusters_distance(data)
 			local minimum_distance = function_tools.minimum_absolute(distances)
 			self:__update_new_cluster(i, minimum_distance)
 		end
