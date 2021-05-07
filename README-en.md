@@ -31,7 +31,7 @@ THE SEED ONLINE：[https://seedonline.jp/products/ceb94d63b67213db6ecc8e4d04daae
 
 Clone this repository and open it in Unity.
 
-- Unity version at developping：2019.4.25f1
+- Unity version at developing：2019.4.25f1
 - Assets you need
 	- [UniVCI](https://github.com/virtual-cast/VCI)
 
