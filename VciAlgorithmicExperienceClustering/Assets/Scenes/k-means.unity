@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.55956984, g: 0.55956984, b: 0.55956984, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -453,6 +453,99 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216993227}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &222186539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 222186540}
+  - component: {fileID: 222186543}
+  - component: {fileID: 222186542}
+  - component: {fileID: 222186541}
+  m_Layer: 0
+  m_Name: Mean (0)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &222186540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222186539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_Children: []
+  m_Father: {fileID: 1891612998}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &222186541
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222186539}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &222186542
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222186539}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 84e190c6c90801e4fa66dcda80a11cdf, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &222186543
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222186539}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &314300048
 GameObject:
   m_ObjectHideFlags: 0
@@ -2711,6 +2804,99 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528381954}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1619933833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1619933834}
+  - component: {fileID: 1619933837}
+  - component: {fileID: 1619933836}
+  - component: {fileID: 1619933835}
+  m_Layer: 0
+  m_Name: Mean (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1619933834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619933833}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_Children: []
+  m_Father: {fileID: 1891612998}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1619933835
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619933833}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1619933836
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619933833}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 37d655c86746cdd4e835b31a09ac0149, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1619933837
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619933833}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1738367144
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,7 +3319,7 @@ MonoBehaviour:
     contactInformation: 
     reference: 
     thumbnail: {fileID: 0}
-    version: 1.0.0
+    version: 1.1.0
     description: "\u30C7\u30FC\u30BF\u5206\u985E\u306E\u305F\u3081\u306E\u6559\u5E2B\u306A\u3057\u5B66\u7FD2\u624B\u6CD5\u300C\u975E\u968E\u5C64\u578B\u30AF\u30E9\u30B9\u30BF\u30EA\u30F3\u30B0\u300D\u3092\u4F53\u9A13\u3067\u304D\u307E\u3059\u3002"
     exporterVersion: 0.32
     specVersion: 
@@ -3163,17 +3349,23 @@ MonoBehaviour:
       type: 3}
     source: "local Clustering = require \"clustering\"\r\n\r\n\r\n-- Controller\u30AF\u30E9\u30B9\uFF08\uFF1F\uFF09\r\nlocal
       Controller = { }\r\nController.new = function( )\r\n\tlocal instance = { }\r\n\tinstance.__clustering
-      = { }\r\n\tinstance.__data_objects = { }\r\n\tinstance.__positions = { }\r\n\r\n\tinstance.initialize
-      = function(self)\r\n\t\tfor i = 0, 19 do\r\n\t\t\tself.__data_objects[i] =
-      vci.assets.GetSubItem(\"Data (\" .. tostring(i) .. \")\")\r\n\t\tend\r\n\t\tself:__set_positions(
+      = { }\r\n\tinstance.__data_objects = { }\r\n\tinstance.__mean_objetcs = { }\r\n\tinstance.__positions
+      = { }\r\n\tinstance.__button_count = 0\r\n\r\n\tinstance.initialize = function(self)\r\n\t\tfor
+      i = 0, 19 do\r\n\t\t\tself.__data_objects[i] = vci.assets.GetSubItem(\"Data
+      (\" .. tostring(i) .. \")\")\r\n\t\tend\r\n\t\tfor i = 0, 2 do\r\n\t\t\tself.__mean_objetcs[i]
+      = vci.assets.GetSubItem(\"Mean (\" .. tostring(i) .. \")\")\r\n\t\tend\r\n\t\tself:__set_positions(
       )\r\n\t\tself.__clustering = Clustering.new(self.__positions, 3)\r\n\t\tself.__clustering:initialize(
       )\r\n\tend\r\n\r\n\tinstance.__set_positions = function(self)\r\n\t\t-- \u30C7\u30FC\u30BF\u3092\u30E9\u30F3\u30C0\u30E0\u306B\u914D\u7F6E\u3057\u307E\u3059\u3002\r\n\t\tfor
       i = 0, 19 do\r\n\t\t\tlocal x = math.random( )\r\n\t\t\tlocal y = math.random(
       )\r\n\t\t\tlocal z = math.random( )\r\n\t\t\tlocal random_vector = Vector3.__new(x,
-      y, z)\r\n\t\t\tself.__positions[i] = random_vector\r\n\t\t\tself.__data_objects[i].SetLocalPosition(random_vector)\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__get_positions
+      y, z)\r\n\t\t\tself.__positions[i] = random_vector\r\n\t\t\tself.__data_objects[i].SetLocalPosition(random_vector)\r\n\t\tend\r\n\t\t--
+      \u91CD\u5FC3\u3092\u4E0A\u7A7A2 km\u306B\u914D\u7F6E\u3057\u307E\u3059\u3002\r\n\t\tfor
+      i = 0, 2 do\r\n\t\t\tlocal vector = Vector3.__new(0, 2000, 0)\r\n\t\t\tself.__mean_objetcs[i].SetLocalPosition(vector)\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__get_positions
       = function(self)\r\n\t\t-- \u30C7\u30FC\u30BF\u306E\u5EA7\u6A19\u3092\u518D\u53D6\u5F97\u3057\u307E\u3059\u3002\r\n\t\tlocal
       datas = self.__clustering:get_datas( )\r\n\t\tfor i = 0, 19 do\r\n\t\t\tlocal
-      position = self.__data_objects[i].GetLocalPosition( )\r\n\t\t\tdatas[i]:set_position(position)\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__set_data_object_color
+      position = self.__data_objects[i].GetLocalPosition( )\r\n\t\t\tdatas[i]:set_position(position)\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__set_mean_object_postion
+      = function(self, centers)\r\n\t\t-- \u91CD\u5FC3\u306E\u5EA7\u6A19\u3092\u66F4\u65B0\u3057\u307E\u3059\r\n\t\tfor
+      i = 0, 2 do\r\n\t\t\tself.__mean_objetcs[i].SetLocalPosition(centers[i])\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__set_data_object_color
       = function(self, clusters)\r\n\t\t-- \u30AF\u30E9\u30B9\u30BF\u30FC\u756A\u53F7\u306B\u5408\u308F\u305B\u3066\uFF0CData\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u306E\u8272\u3092\u5909\u66F4\u3057\u307E\u3059\u3002\r\n\t\t--
       param clusters: \u30AF\u30E9\u30B9\u30BF\u30FC\u756A\u53F7\u306E\u914D\u5217\r\n\t\tfor
       i = 0, 19 do\r\n\t\t\tif clusters[i] == 0 then\r\n\t\t\t\t-- \u3053\u3053\u3067\u306F\u30DE\u30C6\u30EA\u30A2\u30EB\u540D\uFF08Data
@@ -3182,11 +3374,18 @@ MonoBehaviour:
       == 1 then\r\n\t\t\t\tvci.assets.material._ALL_SetColor(\"Data \" .. i, Color.__new(1.0,
       0.625, 1.0))\r\n\t\t\tend\r\n\t\t\tif clusters[i] == 2 then\r\n\t\t\t\tvci.assets.material._ALL_SetColor(\"Data
       \" .. i, Color.__new(1.0, 1.0, 0.625))\r\n\t\t\tend\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.on_button_next_use
-      = function(self)\r\n\t\t-- \u30DC\u30BF\u30F3\u3092\u62BC\u3057\u305F\u3068\u304D\u306E\u30A4\u30D9\u30F3\u30C8\u30CF\u30F3\u30C9\u30E9\u30FC\u3002\u30AF\u30E9\u30B9\u30BF\u30EA\u30F3\u30B0\u3092\u5B9F\u884C\u3057\uFF0C\u7D50\u679C\u306B\u5408\u308F\u305B\u3066\u8272\u3092\u5909\u3048\u308B\u3002\r\n\t\tprint(\"\u5EA7\u6A19\u53D6\u5F97\")\r\n\t\tself:__get_positions(
-      )\r\n\t\tprint(\"k-means\u3059\u308B\u3088\")\r\n\t\tself.__clustering:k_means(
-      )\r\n\t\tlocal datas = self.__clustering:get_datas( )\r\n\t\tprint(\"\u30C7\u30FC\u30BF\u6570\uFF1A\"
-      .. #datas + 1 .. \" \u500B\")\r\n\t\tlocal clusters = { }\r\n\t\tfor i = 0,
-      #datas do\r\n\t\t\tclusters[i] = datas[i]:get_cluster( )\r\n\t\tend\r\n\t\tself:__set_data_object_color(clusters)\r\n\tend\r\n\r\n\r\n\treturn
+      = function(self)\r\n\t\t-- \u30DC\u30BF\u30F3\u3092\u62BC\u3057\u305F\u3068\u304D\u306E\u30A4\u30D9\u30F3\u30C8\u30CF\u30F3\u30C9\u30E9\u30FC\u3002\u30AF\u30E9\u30B9\u30BF\u30EA\u30F3\u30B0\u3092\u5B9F\u884C\u3057\uFF0C\u7D50\u679C\u306B\u5408\u308F\u305B\u3066\u8272\u3092\u5909\u3048\u308B\u3002\r\n\t\tself.__button_count
+      = self.__button_count + 1\r\n\t\tself:__get_positions( )\r\n\t\tif self.__button_count
+      == 1 then\r\n\t\t\t-- \u30B9\u30C6\u30C3\u30D71\uFF1A\u30E9\u30F3\u30C0\u30E0\u306B\u30B0\u30EB\u30FC\u30D7\u5206\u3051\r\n\t\t\tprint(\"\u30B9\u30C6\u30C3\u30D71\u3000\u30E9\u30F3\u30C0\u30E0\u306B\u30B0\u30EB\u30FC\u30D7\u5206\u3051\")\r\n\t\t\tlocal
+      datas = self.__clustering:get_datas( )\r\n\t\t\tprint(\"\u30C7\u30FC\u30BF\u6570\uFF1A\"
+      .. #datas + 1 .. \" \u500B\")\r\n\t\t\tlocal clusters = { }\r\n\t\t\tfor i
+      = 0, #datas do\r\n\t\t\t\tclusters[i] = datas[i]:get_cluster( )\r\n\t\t\tend\r\n\t\t\tself:__set_data_object_color(clusters)\r\n\t\t\treturn\r\n\t\tend\r\n\t\tif
+      self.__button_count % 2 == 0 then\r\n\t\t\t-- \u30B9\u30C6\u30C3\u30D72\uFF1A\u5404\u30B0\u30EB\u30FC\u30D7\u306E\u5E73\u5747\u3092\u6C42\u3081\u308B\r\n\t\t\tprint(\"\u30B9\u30C6\u30C3\u30D72\u3000\u5404\u30B0\u30EB\u30FC\u30D7\u306E\u5E73\u5747\u3092\u6C42\u3081\u308B\")\r\n\t\t\tself.__clustering:calculate_centers(
+      )\r\n\t\t\tlocal centers = self.__clustering:get_centers( )\r\n\t\t\tself:__set_mean_object_postion(centers)\r\n\t\t\treturn\r\n\t\tend\r\n\t\tif
+      self.__button_count % 2 == 1 then\r\n\t\t\t-- \u30B9\u30C6\u30C3\u30D73\uFF1A\u5404\u30C7\u30FC\u30BF\u306E\u30B0\u30EB\u30FC\u30D7\u518D\u5272\u5F53\u3066\r\n\t\t\tprint(\"\u30B9\u30C6\u30C3\u30D73\u3000\u5404\u30C7\u30FC\u30BF\u306E\u30B0\u30EB\u30FC\u30D7\u3092\u518D\u5272\u5F53\u3066\")\r\n\t\t\tself.__clustering:re_calculate_cluster(
+      )\r\n\t\t\tlocal datas = self.__clustering:get_datas( )\r\n\t\t\tlocal clusters
+      = { }\r\n\t\t\tfor i = 0, #datas do\r\n\t\t\t\tclusters[i] = datas[i]:get_cluster(
+      )\r\n\t\t\tend\r\n\t\t\tself:__set_data_object_color(clusters)\r\n\t\t\treturn\r\n\t\tend\r\n\tend\r\n\r\n\r\n\treturn
       instance\r\nend\r\nreturn Controller\r\n"
   - name: function_tools
     mimeType: 0
@@ -3253,15 +3452,16 @@ MonoBehaviour:
       = positions\r\n\tinstance.__length = #positions\r\n\tprint(\"clustering\u30C7\u30FC\u30BF\u6570\uFF1A\"
       .. #positions .. \" \u500B\")\r\n\tinstance.__datas = { }\r\n\tinstance.__k
       = k\r\n\tinstance.__centers = { }\r\n\r\n\tinstance.get_datas = function(self)\r\n\t\treturn
-      self.__datas\r\n\tend\r\n\r\n\tinstance.initialize = function(self)\r\n\t\t--
+      self.__datas\r\n\tend\r\n\r\n\tinstance.get_centers = function(self)\r\n\t\treturn
+      self.__centers\r\n\tend\r\n\r\n\tinstance.initialize = function(self)\r\n\t\t--
       \u30C6\u30AD\u30C8\u30FC\u306B\u30AF\u30E9\u30B9\u30BF\u30FC\u756A\u53F7\u3092\u5272\u308A\u632F\u308A\u307E\u3059\u3002\r\n\t\tprint(\"initialize\uFF1A\u30C6\u30AD\u30C8\u30FC\u306B\u30AF\u30E9\u30B9\u30BF\u30FC\u756A\u53F7\u3092\u5272\u308A\u632F\u308A\u307E\u3059\u3002\")\r\n\t\tlocal
       separation = math.floor(self.__length / self.__k)\r\n\t\tfor i = 0, separation
       do\r\n\t\t\tself.__datas[i] = Data.new(self.__positions[i], 0)\r\n\t\tend\r\n\t\tfor
       i = separation + 1, separation * 2 do\r\n\t\t\tself.__datas[i] = Data.new(self.__positions[i],
       1)\r\n\t\tend\r\n\t\tfor i = separation * 2 + 1, self.__length do\r\n\t\t\tself.__datas[i]
       = Data.new(self.__positions[i], 2)\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.k_means
-      = function(self)\r\n\t\t-- \u30AF\u30E9\u30B9\u30BF\u30EA\u30F3\u30B0\u306E\u8A08\u7B97\u3092\u3057\u307E\u3059\u3002\r\n\t\tself:__calculate_centers(
-      )\r\n\t\tself:__re_calculate_cluster( )\r\n\tend\r\n\r\n\tinstance.__calculate_centers
+      = function(self)\r\n\t\t-- \u30AF\u30E9\u30B9\u30BF\u30EA\u30F3\u30B0\u306E\u8A08\u7B97\u3092\u3057\u307E\u3059\u3002\r\n\t\tself:calculate_centers(
+      )\r\n\t\tself:re_calculate_cluster( )\r\n\tend\r\n\r\n\tinstance.calculate_centers
       = function(self)\r\n\t\t-- \u3059\u3079\u3066\u306E\u30AF\u30E9\u30B9\u30BF\u30FC\u306E\u91CD\u5FC3\u3092\u8A08\u7B97\u3057\u307E\u3059\u3002\r\n\t\tfor
       i = 0, self.__k - 1 do\r\n\t\t\tself:__calculate_center(i)\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__calculate_center
       = function(self, i)\r\n\t\t-- \u7279\u5B9A\u306E\u30AF\u30E9\u30B9\u30BF\u30FC\u306E\u91CD\u5FC3\u3092\u8A08\u7B97\u3057\u307E\u3059\u3002\r\n\t\t--
@@ -3273,7 +3473,7 @@ MonoBehaviour:
       value:get_position( ))\r\n\t\tend\r\n\t\t-- \u91CD\u5FC3\u3092\u66F4\u65B0\r\n\t\tself.__centers[i]
       = function_tools.average_vec3(positions_i)\r\n\t\tprint(\"\u91CD\u5FC3\" ..
       i .. \"\uFF1A(\" .. self.__centers[i].x .. \", \" .. self.__centers[i].y ..
-      \", \" .. self.__centers[i].z .. \")\")\r\n\tend\r\n\r\n\tinstance.__re_calculate_cluster
+      \", \" .. self.__centers[i].z .. \")\")\r\n\tend\r\n\r\n\tinstance.re_calculate_cluster
       = function(self)\r\n\t\t-- \u30AF\u30E9\u30B9\u30BF\u30FC\u3092\u518D\u5272\u5F53\u3066\u3057\u307E\u3059\u3002\r\n\t\tprint(\"\u30AF\u30E9\u30B9\u30BF\u30FC\u3092\u518D\u5272\u5F53\u3066\u3057\u307E\u3059\u3002\")\r\n\t\t--
       \u3059\u3079\u3066\u306E\u30C7\u30FC\u30BFi\u306B\u5BFE\u3057\u3066\uFF0C\u305D\u308C\u305E\u308C\u306E\u30AF\u30E9\u30B9\u30BF\u30FCj\u3068\u306E\u8DDD\u96E2\u3092\u8A08\u7B97
       \u2192 \u8DDD\u96E2\u304C1\u756A\u8FD1\u3044\u30AF\u30E9\u30B9\u30BF\u30FC\u306B\u518D\u5272\u5F53\u3066\r\n\t\tfor
@@ -3323,9 +3523,105 @@ Transform:
   - {fileID: 976545386}
   - {fileID: 841807888}
   - {fileID: 2146861956}
+  - {fileID: 222186540}
+  - {fileID: 1926915529}
+  - {fileID: 1619933834}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1926915528
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1926915529}
+  - component: {fileID: 1926915532}
+  - component: {fileID: 1926915531}
+  - component: {fileID: 1926915530}
+  m_Layer: 0
+  m_Name: Mean (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1926915529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926915528}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_Children: []
+  m_Father: {fileID: 1891612998}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1926915530
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926915528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1926915531
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926915528}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: d2adb8b66d1aa5944a79273a0be05e85, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &1926915532
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926915528}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &2084425742
 GameObject:
   m_ObjectHideFlags: 0

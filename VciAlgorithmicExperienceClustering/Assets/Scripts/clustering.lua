@@ -20,6 +20,10 @@ Clustering.new = function(positions, k)
 		return self.__datas
 	end
 
+	instance.get_centers = function(self)
+		return self.__centers
+	end
+
 	instance.initialize = function(self)
 		-- テキトーにクラスター番号を割り振ります。
 		print("initialize：テキトーにクラスター番号を割り振ります。")
@@ -37,11 +41,11 @@ Clustering.new = function(positions, k)
 
 	instance.k_means = function(self)
 		-- クラスタリングの計算をします。
-		self:__calculate_centers( )
-		self:__re_calculate_cluster( )
+		self:calculate_centers( )
+		self:re_calculate_cluster( )
 	end
 
-	instance.__calculate_centers = function(self)
+	instance.calculate_centers = function(self)
 		-- すべてのクラスターの重心を計算します。
 		for i = 0, self.__k - 1 do
 			self:__calculate_center(i)
@@ -63,7 +67,7 @@ Clustering.new = function(positions, k)
 		print("重心" .. i .. "：(" .. self.__centers[i].x .. ", " .. self.__centers[i].y .. ", " .. self.__centers[i].z .. ")")
 	end
 
-	instance.__re_calculate_cluster = function(self)
+	instance.re_calculate_cluster = function(self)
 		-- クラスターを再割当てします。
 		print("クラスターを再割当てします。")
 		-- すべてのデータiに対して，それぞれのクラスターjとの距離を計算 → 距離が1番近いクラスターに再割当て
