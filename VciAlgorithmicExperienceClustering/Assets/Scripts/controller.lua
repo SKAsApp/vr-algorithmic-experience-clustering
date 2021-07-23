@@ -19,6 +19,7 @@ Controller.new = function( )
 			self.__mean_objetcs[i] = vci.assets.GetSubItem("Mean (" .. tostring(i) .. ")")
 		end
 		self:__set_positions( )
+		self:__initialize_state( )
 		self.__clustering = Clustering.new(self.__positions, 3)
 		self.__clustering:initialize( )
 	end
@@ -37,6 +38,14 @@ Controller.new = function( )
 		for i = 0, 2 do
 			local vector = Vector3.__new(0, 2000, 0)
 			self.__mean_objetcs[i].SetLocalPosition(vector)
+		end
+	end
+
+	instance.__initialize_state = function( )
+		-- 色状態を初期化します。
+		for i = 0, 19 do
+			vci.state.Set("data " .. i .. "_previous_color", 0)
+			vci.state.Set("data " .. i .. "_color", 0)
 		end
 	end
 
@@ -60,16 +69,9 @@ Controller.new = function( )
 		-- クラスター番号に合わせて，Dataオブジェクトの色を変更します。
 		-- param clusters: クラスター番号の配列
 		for i = 0, 19 do
-			if clusters[i] == 0 then
-				-- ここではマテリアル名（Data n）を使う。
-				vci.assets.material._ALL_SetColor("Data " .. i, Color.__new(0.625, 1.0, 1.0))
-			end
-			if clusters[i] == 1 then
-				vci.assets.material._ALL_SetColor("Data " .. i, Color.__new(1.0, 0.625, 1.0))
-			end
-			if clusters[i] == 2 then
-				vci.assets.material._ALL_SetColor("Data " .. i, Color.__new(1.0, 1.0, 0.625))
-			end
+			local previous_color = vci.state.Get("data " .. i .. "_color")
+			vci.state.Set("data " .. i .. "_previous_color", previous_color)
+			vci.state.Set("data " .. i .. "_color", clusters[i])
 		end
 	end
 
@@ -108,6 +110,24 @@ Controller.new = function( )
 			end
 			self:__set_data_object_color(clusters)
 			return
+		end
+	end
+
+	instance.update = function(self)
+		-- 毎フレーム
+		for i = 0, 19 do
+			local previous_color = vci.state.Get("data " .. i .. "_previous_color")
+			local data_color = vci.state.Get("data " .. i .. "_color")
+			if previous_color ~= data_color and data_color == 0 then
+				-- ここではマテリアル名（Data n）を使う。
+				vci.assets.material._ALL_SetColor("Data " .. i, Color.__new(0.625, 1.0, 1.0))
+			end
+			if previous_color ~= data_color and data_color == 1 then
+				vci.assets.material._ALL_SetColor("Data " .. i, Color.__new(1.0, 0.625, 1.0))
+			end
+			if previous_color ~= data_color and data_color == 2 then
+				vci.assets.material._ALL_SetColor("Data " .. i, Color.__new(1.0, 1.0, 0.625))
+			end
 		end
 	end
 
