@@ -13,6 +13,10 @@ onUse = function(use)
 		controller:on_button_next_use( )
 		return
 	end
+	if use == "ButtonReset" then
+		controller:on_button_reset_use( )
+		return
+	end
 end
 
 

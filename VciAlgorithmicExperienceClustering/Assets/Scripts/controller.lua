@@ -10,8 +10,17 @@ Controller.new = function( )
 	instance.__data_objects = { }
 	instance.__mean_objetcs = { }
 	instance.__positions = { }
+	instance.__previous_positions = { }
 	instance.__centre_object = vci.assets.GetTransform("Centre")
 	instance.__button_count = 0
+	instance.__is_finished = false
+
+	instance.__set_positions = function(self, index, value)
+		-- positionsをprevious_positionsに保持し、positionsを更新します。
+		-- param index Number: positions配列のインデックス
+		self.__previous_positions[index] = self.__positions[index]
+		self.__positions[index] = value
+	end
 
 	instance.initialise = function(self)
 		-- データと重心のExportTransformを取得
@@ -21,9 +30,16 @@ Controller.new = function( )
 		for i = 0, 2 do
 			self.__mean_objetcs[i] = vci.assets.GetTransform("Mean (" .. tostring(i) .. ")")
 		end
-		-- 初期化
+		self:__initialise_main(false)
+	end
+
+	instance.__initialise_main = function(self, is_reset)
+		-- 初期化メイン処理
+		-- param is_reset Bool: リセットボタンによるものか
+		instance.__button_count = 0
+		instance.__is_finished = false
 		self:__set_initial_positions( )
-		self:__initialise_state( )
+		self:__initialise_state(is_reset)
 	end
 
 	instance.__set_initial_positions = function(self)
@@ -31,6 +47,7 @@ Controller.new = function( )
 		-- データ
 		for i = 0, 19 do
 			local vector = Vector3.__new(0, 2000, 0)
+			self:__set_positions(i, vector)
 			self.__data_objects[i].SetLocalPosition(vector)
 		end
 		-- 重心
@@ -48,18 +65,20 @@ Controller.new = function( )
 			local y = math.random( ) - 0.5
 			local z = math.random( ) - 0.5
 			local random_vector = Vector3.__new(x, y, z)
-			self.__positions[i] = function_tools.add_vec3(random_vector, centre_position)
+			self:__set_positions(i, function_tools.add_vec3(random_vector, centre_position))
 			self.__data_objects[i].SetPosition(self.__positions[i])
-		end
-		-- 重心を上空2 kmに配置します。
-		for i = 0, 2 do
-			local vector = Vector3.__new(0, 2000, 0)
-			self.__mean_objetcs[i].SetLocalPosition(vector)
 		end
 	end
 
-	instance.__initialise_state = function( )
+	instance.__initialise_state = function(is_reset)
 		-- 色状態を初期化します。
+		-- param is_reset Bool: リセットボタンによるものか
+		if is_reset then
+			for i = 0, 19 do
+				vci.state.Set("data " .. i .. "_color", 0)
+			end
+			return
+		end
 		for i = 0, 19 do
 			vci.state.Set("data " .. i .. "_previous_color", 0)
 			vci.state.Set("data " .. i .. "_color", 0)
@@ -70,15 +89,36 @@ Controller.new = function( )
 		-- データの座標を再取得します。
 		local datas = self.__clustering:get_datas( )
 		for i = 0, 19 do
-			local position = self.__data_objects[i].GetLocalPosition( )
+			local position = self.__data_objects[i].GetPosition( )
+			self:__set_positions(i, position)
 			datas[i]:set_position(position)
 		end
 	end
 
+	instance.__is_position_changed = function(self)
+		-- データの座標が変わったか（手動で移動したかどうか判断します）
+		for i = 0, 19 do
+			if not function_tools.is_equal_vec3(self.__positions[i], self.__previous_positions[i]) then
+				self.__is_finished = false
+				print("データ動いた")
+				return true
+			end
+		end
+		return false
+	end
+
 	instance.__set_mean_object_postion = function(self, centers)
 		-- 重心の座標を更新します
+		local is_mean_changed = false
 		for i = 0, 2 do
-			self.__mean_objetcs[i].SetLocalPosition(centers[i])
+			if not function_tools.is_equal_vec3(self.__mean_objetcs[i].GetPosition( ), centers[i]) then
+				is_mean_changed = true
+				self.__mean_objetcs[i].SetPosition(centers[i])
+			end
+		end
+		if not is_mean_changed then
+			self.__is_finished = true
+			print("収束しました")
 		end
 	end
 
@@ -100,6 +140,13 @@ Controller.new = function( )
 			return
 		end
 		self:__get_positions( )
+		self:__is_position_changed( )
+		if self.__is_finished then
+			self.__button_count = self.__button_count - 1
+			print("収束しています")
+			return
+		end
+		self:__sound_next( )
 		if self.__button_count == 2 then
 			self:__step1( )
 			return
@@ -114,11 +161,24 @@ Controller.new = function( )
 		end
 	end
 
+	instance.__sound_next = function(self)
+		-- 「次へ」ボタンを押したときの音を鳴らします
+		vci.assets.audio._ALL_Play("decision17", 0.80, false)
+	end
+
 	instance.__step0 = function(self)
 		-- ステップ0：ランダムに配置し、clusteringインスタンスの初期化
+		print("ステップ0：ランダムにデータを配置")
+		self:__sound_next( )
 		self:__set_random_positions( )
+		self:__force_color_change( )
 		self.__clustering = Clustering.new(self.__positions, 3)
 		self.__clustering:initialise( )
+	end
+
+	instance.__force_color_change = function(self)
+		-- 強制的に色の更新をかけます。
+		vci.state.Set("force_init_color", true)
 	end
 
 	instance.__step1 = function(self)
@@ -153,6 +213,35 @@ Controller.new = function( )
 		self:__set_data_object_color(clusters)
 	end
 
+	instance.on_button_reset_use = function(self)
+		-- リセットボタンを押したとき。
+		if self.__button_count == 0 then
+			return
+		end
+		self:__sound_reset( )
+		self:__initialise_main(true)
+		self.__button_count = 0
+		print("リセットしました")
+	end
+
+	instance.__sound_reset = function(self)
+		-- 「リセット」ボタンを押したときの音を鳴らします
+		vci.assets.audio._ALL_Play("decision1", 0.80, false)
+	end
+
+	instance.update = function(self)
+		-- 全ユーザー毎フレーム
+		if vci.state.Get("force_init_color") then
+			for i = 0, 19 do
+				vci.assets.material._ALL_SetColor("Data " .. i, Color.__new(0.625, 1.0, 1.0))
+			end
+			vci.state.Set("force_init_color", false)
+		end
+		for i = 0, 19 do
+			self:set_data_color(i)
+		end
+	end
+
 	instance.set_data_color = function(self, data_number)
 		-- 色ステートの変更があった場合にデータオブジェクト1つの色を変えます。
 		-- data_number Number: データオブジェクト番号
@@ -170,13 +259,6 @@ Controller.new = function( )
 		if previous_color ~= data_color and data_color == 2 then
 			vci.assets.material._ALL_SetColor("Data " .. data_number, Color.__new(1.0, 1.0, 0.625))
 			return
-		end
-	end
-
-	instance.update = function(self)
-		-- 全ユーザー毎フレーム
-		for i = 0, 19 do
-			self:set_data_color(i)
 		end
 	end
 

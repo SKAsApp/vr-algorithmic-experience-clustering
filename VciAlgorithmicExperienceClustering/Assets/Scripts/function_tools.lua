@@ -77,6 +77,15 @@ function_tools.add_vec3 = function(vec1, vec2)
 end
 
 
+function_tools.is_equal_vec3 = function(vec1, vec2)
+	-- vec3の各成分が等しいか判断します。
+	local equal_x = -0.000001 < vec1.x - vec2.x and vec1.x - vec2.x < 0.000001
+	local equal_y = -0.000001 < vec1.y - vec2.y and vec1.y - vec2.y < 0.000001
+	local equal_z = -0.000001 < vec1.z - vec2.z and vec1.z - vec2.z < 0.000001
+	return equal_x and equal_y and equal_z
+end
+
+
 function_tools.minimum_absolute = function(from_array)
 	-- 配列の絶対値が最小のインデックスと，その値を配列で返します。
 	local result = { }

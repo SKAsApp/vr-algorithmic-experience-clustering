@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 134318624}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1, z: 0.01}
+  m_LocalPosition: {x: 0, y: 0, z: 0.01}
   m_LocalScale: {x: 0.04, y: 0.020000001, z: 0.040000003}
   m_Children: []
   m_Father: {fileID: 2146861956}
@@ -1983,7 +1983,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1152548608}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.025000017, z: 0.050000034}
   m_Children: []
   m_Father: {fileID: 1396595458}
@@ -2593,6 +2593,7 @@ GameObject:
   - component: {fileID: 1396595458}
   - component: {fileID: 1396595460}
   - component: {fileID: 1396595459}
+  - component: {fileID: 1396595461}
   m_Layer: 0
   m_Name: ButtonReset
   m_TagString: Untagged
@@ -2608,7 +2609,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396595457}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.087, y: 0, z: 0}
+  m_LocalPosition: {x: 0.087, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1152548609}
@@ -2650,6 +2651,102 @@ MonoBehaviour:
   Attractable: 0
   GroupId: 0
   NodeIndex: 0
+--- !u!82 &1396595461
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396595457}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7621291988c0dfd40a8b6b12b1922e80, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1440494617
 GameObject:
   m_ObjectHideFlags: 0
@@ -2678,7 +2775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440494617}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.05, y: 0.025000017, z: 0.050000034}
   m_Children: []
   m_Father: {fileID: 2146861956}
@@ -3661,7 +3758,7 @@ MonoBehaviour:
     contactInformation: 
     reference: 
     thumbnail: {fileID: 0}
-    version: "2.0.0\u03B111 \u4E2D\u5FC3\u4FEE\u6B63"
+    version: 2.0.0
     description: "\u30C7\u30FC\u30BF\u5206\u985E\u306E\u305F\u3081\u306E\u6559\u5E2B\u306A\u3057\u5B66\u7FD2\u624B\u6CD5\u300C\u975E\u968E\u5C64\u578B\u30AF\u30E9\u30B9\u30BF\u30EA\u30F3\u30B0\u300D\u3092\u4F53\u9A13\u3067\u304D\u307E\u3059\u3002"
     exporterVersion: 0.32
     specVersion: 
@@ -3684,7 +3781,8 @@ MonoBehaviour:
       = function(use)\r\n\t-- \uFF08VCI\u306E\u30A4\u30D9\u30F3\u30C8\u30CF\u30F3\u30C9\u30E9\u30FC\uFF09\u30B0\u30EA\u30C3\u30D7\u3057\u305F\u3068\u304D\r\n\t--
       param use: \u30B0\u30EA\u30C3\u30D7\u3057\u305FSubItem\u306E\u540D\u524D\r\n\tprint(\"onUse\u3055\u308C\uFF0C\"
       .. use .. \"\u304C\u62BC\u3055\u308C\u307E\u3057\u305F\u3002\")\r\n\tif use
-      == \"ButtonNext\" then\r\n\t\tcontroller:on_button_next_use( )\r\n\t\treturn\r\n\tend\r\nend\r\n\r\n\r\nupdateAll
+      == \"ButtonNext\" then\r\n\t\tcontroller:on_button_next_use( )\r\n\t\treturn\r\n\tend\r\n\tif
+      use == \"ButtonReset\" then\r\n\t\tcontroller:on_button_reset_use( )\r\n\t\treturn\r\n\tend\r\nend\r\n\r\n\r\nupdateAll
       = function( )\r\n\t-- \uFF08VCI\u306E\u30A4\u30D9\u30F3\u30C8\u30CF\u30F3\u30C9\u30E9\u30FC\uFF09\u5168\u30E6\u30FC\u30B6\u30FC\u3067\u306E\u6BCE\u30D5\u30EC\u30FC\u30E0\u5B9F\u884C\r\n\tcontroller:update(
       )\r\n\treturn\r\nend\r\n"
   - name: controller
@@ -3696,33 +3794,50 @@ MonoBehaviour:
       require \"function_tools\"\r\n\r\n\r\n-- Controller\u30AF\u30E9\u30B9\uFF08\uFF1F\uFF09\r\nlocal
       Controller = { }\r\nController.new = function( )\r\n\tlocal instance = { }\r\n\tinstance.__clustering
       = { }\r\n\tinstance.__data_objects = { }\r\n\tinstance.__mean_objetcs = { }\r\n\tinstance.__positions
-      = { }\r\n\tinstance.__centre_object = vci.assets.GetTransform(\"Centre\")\r\n\tinstance.__button_count
-      = 0\r\n\r\n\tinstance.initialise = function(self)\r\n\t\t-- \u30C7\u30FC\u30BF\u3068\u91CD\u5FC3\u306EExportTransform\u3092\u53D6\u5F97\r\n\t\tfor
+      = { }\r\n\tinstance.__previous_positions = { }\r\n\tinstance.__centre_object
+      = vci.assets.GetTransform(\"Centre\")\r\n\tinstance.__button_count = 0\r\n\tinstance.__is_finished
+      = false\r\n\r\n\tinstance.__set_positions = function(self, index, value)\r\n\t\t--
+      positions\u3092previous_positions\u306B\u4FDD\u6301\u3057\u3001positions\u3092\u66F4\u65B0\u3057\u307E\u3059\u3002\r\n\t\t--
+      param index Number: positions\u914D\u5217\u306E\u30A4\u30F3\u30C7\u30C3\u30AF\u30B9\r\n\t\tself.__previous_positions[index]
+      = self.__positions[index]\r\n\t\tself.__positions[index] = value\r\n\tend\r\n\r\n\tinstance.initialise
+      = function(self)\r\n\t\t-- \u30C7\u30FC\u30BF\u3068\u91CD\u5FC3\u306EExportTransform\u3092\u53D6\u5F97\r\n\t\tfor
       i = 0, 19 do\r\n\t\t\tself.__data_objects[i] = vci.assets.GetTransform(\"Data
       (\" .. tostring(i) .. \")\")\r\n\t\tend\r\n\t\tfor i = 0, 2 do\r\n\t\t\tself.__mean_objetcs[i]
-      = vci.assets.GetTransform(\"Mean (\" .. tostring(i) .. \")\")\r\n\t\tend\r\n\t\t--
-      \u521D\u671F\u5316\r\n\t\tself:__set_initial_positions( )\r\n\t\tself:__initialise_state(
-      )\r\n\tend\r\n\r\n\tinstance.__set_initial_positions = function(self)\r\n\t\t--
-      \u547C\u3073\u51FA\u3057\u6642\u306F\u5168\u90E8\u4E0A\u7A7A2 km\u306B\u914D\u7F6E\u3057\u307E\u3059\u3002\r\n\t\t--
-      \u30C7\u30FC\u30BF\r\n\t\tfor i = 0, 19 do\r\n\t\t\tlocal vector = Vector3.__new(0,
-      2000, 0)\r\n\t\t\tself.__data_objects[i].SetLocalPosition(vector)\r\n\t\tend\r\n\t\t--
+      = vci.assets.GetTransform(\"Mean (\" .. tostring(i) .. \")\")\r\n\t\tend\r\n\t\tself:__initialise_main(false)\r\n\tend\r\n\r\n\tinstance.__initialise_main
+      = function(self, is_reset)\r\n\t\t-- \u521D\u671F\u5316\u30E1\u30A4\u30F3\u51E6\u7406\r\n\t\t--
+      param is_reset Bool: \u30EA\u30BB\u30C3\u30C8\u30DC\u30BF\u30F3\u306B\u3088\u308B\u3082\u306E\u304B\r\n\t\tinstance.__button_count
+      = 0\r\n\t\tinstance.__is_finished = false\r\n\t\tself:__set_initial_positions(
+      )\r\n\t\tself:__initialise_state(is_reset)\r\n\tend\r\n\r\n\tinstance.__set_initial_positions
+      = function(self)\r\n\t\t-- \u547C\u3073\u51FA\u3057\u6642\u306F\u5168\u90E8\u4E0A\u7A7A2
+      km\u306B\u914D\u7F6E\u3057\u307E\u3059\u3002\r\n\t\t-- \u30C7\u30FC\u30BF\r\n\t\tfor
+      i = 0, 19 do\r\n\t\t\tlocal vector = Vector3.__new(0, 2000, 0)\r\n\t\t\tself:__set_positions(i,
+      vector)\r\n\t\t\tself.__data_objects[i].SetLocalPosition(vector)\r\n\t\tend\r\n\t\t--
       \u91CD\u5FC3\r\n\t\tfor i = 0, 2 do\r\n\t\t\tlocal vector = Vector3.__new(0,
       2000, 0)\r\n\t\t\tself.__mean_objetcs[i].SetLocalPosition(vector)\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__set_random_positions
       = function(self)\r\n\t\t-- \u30C7\u30FC\u30BF\u3092\u4E2D\u5FC3\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u3092\u4E2D\u5FC3\u306B\u30E9\u30F3\u30C0\u30E0\u306B\u914D\u7F6E\u3057\u307E\u3059\u3002\r\n\t\tlocal
       centre_position = self.__centre_object.GetPosition( )\r\n\t\tfor i = 0, 19
       do\r\n\t\t\tlocal x = math.random( ) - 0.5\r\n\t\t\tlocal y = math.random(
       ) - 0.5\r\n\t\t\tlocal z = math.random( ) - 0.5\r\n\t\t\tlocal random_vector
-      = Vector3.__new(x, y, z)\r\n\t\t\tself.__positions[i] = random_vector\r\n\t\t\tself.__data_objects[i].SetLocalPosition(random_vector)\r\n\t\tend\r\n\t\t--
-      \u91CD\u5FC3\u3092\u4E0A\u7A7A2 km\u306B\u914D\u7F6E\u3057\u307E\u3059\u3002\r\n\t\tfor
-      i = 0, 2 do\r\n\t\t\tlocal vector = Vector3.__new(0, 2000, 0)\r\n\t\t\tself.__mean_objetcs[i].SetLocalPosition(vector)\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__initialise_state
-      = function( )\r\n\t\t-- \u8272\u72B6\u614B\u3092\u521D\u671F\u5316\u3057\u307E\u3059\u3002\r\n\t\tfor
-      i = 0, 19 do\r\n\t\t\tvci.state.Set(\"data \" .. i .. \"_previous_color\",
-      0)\r\n\t\t\tvci.state.Set(\"data \" .. i .. \"_color\", 0)\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__get_positions
+      = Vector3.__new(x, y, z)\r\n\t\t\tself:__set_positions(i, function_tools.add_vec3(random_vector,
+      centre_position))\r\n\t\t\tself.__data_objects[i].SetPosition(self.__positions[i])\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__initialise_state
+      = function(is_reset)\r\n\t\t-- \u8272\u72B6\u614B\u3092\u521D\u671F\u5316\u3057\u307E\u3059\u3002\r\n\t\t--
+      param is_reset Bool: \u30EA\u30BB\u30C3\u30C8\u30DC\u30BF\u30F3\u306B\u3088\u308B\u3082\u306E\u304B\r\n\t\tif
+      is_reset then\r\n\t\t\tfor i = 0, 19 do\r\n\t\t\t\tvci.state.Set(\"data \"
+      .. i .. \"_color\", 0)\r\n\t\t\tend\r\n\t\t\treturn\r\n\t\tend\r\n\t\tfor i
+      = 0, 19 do\r\n\t\t\tvci.state.Set(\"data \" .. i .. \"_previous_color\", 0)\r\n\t\t\tvci.state.Set(\"data
+      \" .. i .. \"_color\", 0)\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__get_positions
       = function(self)\r\n\t\t-- \u30C7\u30FC\u30BF\u306E\u5EA7\u6A19\u3092\u518D\u53D6\u5F97\u3057\u307E\u3059\u3002\r\n\t\tlocal
       datas = self.__clustering:get_datas( )\r\n\t\tfor i = 0, 19 do\r\n\t\t\tlocal
-      position = self.__data_objects[i].GetLocalPosition( )\r\n\t\t\tdatas[i]:set_position(position)\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__set_mean_object_postion
-      = function(self, centers)\r\n\t\t-- \u91CD\u5FC3\u306E\u5EA7\u6A19\u3092\u66F4\u65B0\u3057\u307E\u3059\r\n\t\tfor
-      i = 0, 2 do\r\n\t\t\tself.__mean_objetcs[i].SetLocalPosition(centers[i])\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__set_data_object_color
+      position = self.__data_objects[i].GetPosition( )\r\n\t\t\tself:__set_positions(i,
+      position)\r\n\t\t\tdatas[i]:set_position(position)\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__is_position_changed
+      = function(self)\r\n\t\t-- \u30C7\u30FC\u30BF\u306E\u5EA7\u6A19\u304C\u5909\u308F\u3063\u305F\u304B\uFF08\u624B\u52D5\u3067\u79FB\u52D5\u3057\u305F\u304B\u3069\u3046\u304B\u5224\u65AD\u3057\u307E\u3059\uFF09\r\n\t\tfor
+      i = 0, 19 do\r\n\t\t\tif not function_tools.is_equal_vec3(self.__positions[i],
+      self.__previous_positions[i]) then\r\n\t\t\t\tself.__is_finished = false\r\n\t\t\t\tprint(\"\u30C7\u30FC\u30BF\u52D5\u3044\u305F\")\r\n\t\t\t\treturn
+      true\r\n\t\t\tend\r\n\t\tend\r\n\t\treturn false\r\n\tend\r\n\r\n\tinstance.__set_mean_object_postion
+      = function(self, centers)\r\n\t\t-- \u91CD\u5FC3\u306E\u5EA7\u6A19\u3092\u66F4\u65B0\u3057\u307E\u3059\r\n\t\tlocal
+      is_mean_changed = false\r\n\t\tfor i = 0, 2 do\r\n\t\t\tif not function_tools.is_equal_vec3(self.__mean_objetcs[i].GetPosition(
+      ), centers[i]) then\r\n\t\t\t\tis_mean_changed = true\r\n\t\t\t\tself.__mean_objetcs[i].SetPosition(centers[i])\r\n\t\t\tend\r\n\t\tend\r\n\t\tif
+      not is_mean_changed then\r\n\t\t\tself.__is_finished = true\r\n\t\t\tprint(\"\u53CE\u675F\u3057\u307E\u3057\u305F\")\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__set_data_object_color
       = function(self, clusters)\r\n\t\t-- \u30AF\u30E9\u30B9\u30BF\u30FC\u756A\u53F7\u306B\u5408\u308F\u305B\u3066\uFF0CData\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u306E\u8272\u3092\u5909\u66F4\u3057\u307E\u3059\u3002\r\n\t\t--
       param clusters: \u30AF\u30E9\u30B9\u30BF\u30FC\u756A\u53F7\u306E\u914D\u5217\r\n\t\tfor
       i = 0, 19 do\r\n\t\t\tlocal previous_color = vci.state.Get(\"data \" .. i ..
@@ -3730,13 +3845,20 @@ MonoBehaviour:
       \" .. i .. \"_color\", clusters[i])\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.on_button_next_use
       = function(self)\r\n\t\t-- \u30DC\u30BF\u30F3\u3092\u62BC\u3057\u305F\u3068\u304D\u306E\u30A4\u30D9\u30F3\u30C8\u30CF\u30F3\u30C9\u30E9\u30FC\u3002\u30AF\u30E9\u30B9\u30BF\u30EA\u30F3\u30B0\u3092\u5B9F\u884C\u3057\uFF0C\u7D50\u679C\u306B\u5408\u308F\u305B\u3066\u8272\u3092\u5909\u3048\u308B\u3002\r\n\t\tself.__button_count
       = self.__button_count + 1\r\n\t\tif self.__button_count == 1 then\r\n\t\t\tself:__step0(
-      )\r\n\t\t\treturn\r\n\t\tend\r\n\t\tself:__get_positions( )\r\n\t\tif self.__button_count
-      == 2 then\r\n\t\t\tself:__step1( )\r\n\t\t\treturn\r\n\t\tend\r\n\t\tif self.__button_count
-      % 2 == 1 then\r\n\t\t\tself:__step2( )\r\n\t\t\treturn\r\n\t\tend\r\n\t\tif
-      self.__button_count % 2 == 0 then\r\n\t\t\tself:__step3( )\r\n\t\t\treturn\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__step0
-      = function(self)\r\n\t\t-- \u30B9\u30C6\u30C3\u30D70\uFF1A\u30E9\u30F3\u30C0\u30E0\u306B\u914D\u7F6E\u3057\u3001clustering\u30A4\u30F3\u30B9\u30BF\u30F3\u30B9\u306E\u521D\u671F\u5316\r\n\t\tself:__set_random_positions(
-      )\r\n\t\tself.__clustering = Clustering.new(self.__positions, 3)\r\n\t\tself.__clustering:initialise(
-      )\r\n\tend\r\n\r\n\tinstance.__step1 = function(self)\r\n\t\t-- \u30B9\u30C6\u30C3\u30D71\uFF1A\u30E9\u30F3\u30C0\u30E0\u306B\u30B0\u30EB\u30FC\u30D7\u5206\u3051\r\n\t\tprint(\"\u30B9\u30C6\u30C3\u30D71\u3000\u30E9\u30F3\u30C0\u30E0\u306B\u30B0\u30EB\u30FC\u30D7\u5206\u3051\")\r\n\t\tlocal
+      )\r\n\t\t\treturn\r\n\t\tend\r\n\t\tself:__get_positions( )\r\n\t\tself:__is_position_changed(
+      )\r\n\t\tif self.__is_finished then\r\n\t\t\tself.__button_count = self.__button_count
+      - 1\r\n\t\t\tprint(\"\u53CE\u675F\u3057\u3066\u3044\u307E\u3059\")\r\n\t\t\treturn\r\n\t\tend\r\n\t\tself:__sound_next(
+      )\r\n\t\tif self.__button_count == 2 then\r\n\t\t\tself:__step1( )\r\n\t\t\treturn\r\n\t\tend\r\n\t\tif
+      self.__button_count % 2 == 1 then\r\n\t\t\tself:__step2( )\r\n\t\t\treturn\r\n\t\tend\r\n\t\tif
+      self.__button_count % 2 == 0 then\r\n\t\t\tself:__step3( )\r\n\t\t\treturn\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__sound_next
+      = function(self)\r\n\t\t-- \u300C\u6B21\u3078\u300D\u30DC\u30BF\u30F3\u3092\u62BC\u3057\u305F\u3068\u304D\u306E\u97F3\u3092\u9CF4\u3089\u3057\u307E\u3059\r\n\t\tvci.assets.audio._ALL_Play(\"decision17\",
+      0.80, false)\r\n\tend\r\n\r\n\tinstance.__step0 = function(self)\r\n\t\t--
+      \u30B9\u30C6\u30C3\u30D70\uFF1A\u30E9\u30F3\u30C0\u30E0\u306B\u914D\u7F6E\u3057\u3001clustering\u30A4\u30F3\u30B9\u30BF\u30F3\u30B9\u306E\u521D\u671F\u5316\r\n\t\tprint(\"\u30B9\u30C6\u30C3\u30D70\uFF1A\u30E9\u30F3\u30C0\u30E0\u306B\u30C7\u30FC\u30BF\u3092\u914D\u7F6E\")\r\n\t\tself:__sound_next(
+      )\r\n\t\tself:__set_random_positions( )\r\n\t\tself:__force_color_change( )\r\n\t\tself.__clustering
+      = Clustering.new(self.__positions, 3)\r\n\t\tself.__clustering:initialise(
+      )\r\n\tend\r\n\r\n\tinstance.__force_color_change = function(self)\r\n\t\t--
+      \u5F37\u5236\u7684\u306B\u8272\u306E\u66F4\u65B0\u3092\u304B\u3051\u307E\u3059\u3002\r\n\t\tvci.state.Set(\"force_init_color\",
+      true)\r\n\tend\r\n\r\n\tinstance.__step1 = function(self)\r\n\t\t-- \u30B9\u30C6\u30C3\u30D71\uFF1A\u30E9\u30F3\u30C0\u30E0\u306B\u30B0\u30EB\u30FC\u30D7\u5206\u3051\r\n\t\tprint(\"\u30B9\u30C6\u30C3\u30D71\u3000\u30E9\u30F3\u30C0\u30E0\u306B\u30B0\u30EB\u30FC\u30D7\u5206\u3051\")\r\n\t\tlocal
       datas = self.__clustering:get_datas( )\r\n\t\tprint(\"\u30C7\u30FC\u30BF\u6570\uFF1A\"
       .. #datas + 1 .. \" \u500B\")\r\n\t\tlocal clusters = { }\r\n\t\tfor i = 0,
       #datas do\r\n\t\t\tclusters[i] = datas[i]:get_cluster( )\r\n\t\tend\r\n\t\tself:__set_data_object_color(clusters)\r\n\tend\r\n\r\n\tinstance.__step2
@@ -3745,7 +3867,15 @@ MonoBehaviour:
       = function(self)\r\n\t\t-- \u30B9\u30C6\u30C3\u30D73\uFF1A\u5404\u30C7\u30FC\u30BF\u306E\u30B0\u30EB\u30FC\u30D7\u518D\u5272\u5F53\u3066\r\n\t\tprint(\"\u30B9\u30C6\u30C3\u30D73\u3000\u5404\u30C7\u30FC\u30BF\u306E\u30B0\u30EB\u30FC\u30D7\u3092\u518D\u5272\u5F53\u3066\")\r\n\t\tself.__clustering:re_calculate_cluster(
       )\r\n\t\tlocal datas = self.__clustering:get_datas( )\r\n\t\tlocal clusters
       = { }\r\n\t\tfor i = 0, #datas do\r\n\t\t\tclusters[i] = datas[i]:get_cluster(
-      )\r\n\t\tend\r\n\t\tself:__set_data_object_color(clusters)\r\n\tend\r\n\r\n\tinstance.set_data_color
+      )\r\n\t\tend\r\n\t\tself:__set_data_object_color(clusters)\r\n\tend\r\n\r\n\tinstance.on_button_reset_use
+      = function(self)\r\n\t\t-- \u30EA\u30BB\u30C3\u30C8\u30DC\u30BF\u30F3\u3092\u62BC\u3057\u305F\u3068\u304D\u3002\r\n\t\tif
+      self.__button_count == 0 then\r\n\t\t\treturn\r\n\t\tend\r\n\t\tself:__sound_reset(
+      )\r\n\t\tself:__initialise_main(true)\r\n\t\tself.__button_count = 0\r\n\t\tprint(\"\u30EA\u30BB\u30C3\u30C8\u3057\u307E\u3057\u305F\")\r\n\tend\r\n\r\n\tinstance.__sound_reset
+      = function(self)\r\n\t\t-- \u300C\u30EA\u30BB\u30C3\u30C8\u300D\u30DC\u30BF\u30F3\u3092\u62BC\u3057\u305F\u3068\u304D\u306E\u97F3\u3092\u9CF4\u3089\u3057\u307E\u3059\r\n\t\tvci.assets.audio._ALL_Play(\"decision1\",
+      0.80, false)\r\n\tend\r\n\r\n\tinstance.update = function(self)\r\n\t\t-- \u5168\u30E6\u30FC\u30B6\u30FC\u6BCE\u30D5\u30EC\u30FC\u30E0\r\n\t\tif
+      vci.state.Get(\"force_init_color\") then\r\n\t\t\tfor i = 0, 19 do\r\n\t\t\t\tvci.assets.material._ALL_SetColor(\"Data
+      \" .. i, Color.__new(0.625, 1.0, 1.0))\r\n\t\t\tend\r\n\t\t\tvci.state.Set(\"force_init_color\",
+      false)\r\n\t\tend\r\n\t\tfor i = 0, 19 do\r\n\t\t\tself:set_data_color(i)\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.set_data_color
       = function(self, data_number)\r\n\t\t-- \u8272\u30B9\u30C6\u30FC\u30C8\u306E\u5909\u66F4\u304C\u3042\u3063\u305F\u5834\u5408\u306B\u30C7\u30FC\u30BF\u30AA\u30D6\u30B8\u30A7\u30AF\u30C81\u3064\u306E\u8272\u3092\u5909\u3048\u307E\u3059\u3002\r\n\t\t--
       data_number Number: \u30C7\u30FC\u30BF\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u756A\u53F7\r\n\t\tlocal
       previous_color = vci.state.Get(\"data \" .. data_number .. \"_previous_color\")\r\n\t\tlocal
@@ -3756,9 +3886,7 @@ MonoBehaviour:
       previous_color ~= data_color and data_color == 1 then\r\n\t\t\tvci.assets.material._ALL_SetColor(\"Data
       \" .. data_number, Color.__new(1.0, 0.625, 1.0))\r\n\t\t\treturn\r\n\t\tend\r\n\t\tif
       previous_color ~= data_color and data_color == 2 then\r\n\t\t\tvci.assets.material._ALL_SetColor(\"Data
-      \" .. data_number, Color.__new(1.0, 1.0, 0.625))\r\n\t\t\treturn\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.update
-      = function(self)\r\n\t\t-- \u5168\u30E6\u30FC\u30B6\u30FC\u6BCE\u30D5\u30EC\u30FC\u30E0\r\n\t\tfor
-      i = 0, 19 do\r\n\t\t\tself:set_data_color(i)\r\n\t\tend\r\n\tend\r\n\r\n\r\n\treturn
+      \" .. data_number, Color.__new(1.0, 1.0, 0.625))\r\n\t\t\treturn\r\n\t\tend\r\n\tend\r\n\r\n\r\n\treturn
       instance\r\nend\r\nreturn Controller\r\n"
   - name: function_tools
     mimeType: 0
@@ -3787,7 +3915,12 @@ MonoBehaviour:
       = sum_x + value.x\r\n\t\tsum_y = sum_y + value.y\r\n\t\tsum_z = sum_z + value.z\r\n\tend\r\n\treturn
       Vector3.__new(sum_x / count, sum_y / count, sum_z / count)\r\nend\r\n\r\n\r\nfunction_tools.add_vec3
       = function(vec1, vec2)\r\n\t-- vec3\u306E\u5404\u6210\u5206\u540C\u58EB\u3092\u8DB3\u3057\u307E\u3059\u3002\r\n\treturn
-      Vector3.__new(vec1.x + vec2.x, vec1.y + vec2.y, vec1.z + vec2.z)\r\nend\r\n\r\n\r\nfunction_tools.minimum_absolute
+      Vector3.__new(vec1.x + vec2.x, vec1.y + vec2.y, vec1.z + vec2.z)\r\nend\r\n\r\n\r\nfunction_tools.is_equal_vec3
+      = function(vec1, vec2)\r\n\t-- vec3\u306E\u5404\u6210\u5206\u304C\u7B49\u3057\u3044\u304B\u5224\u65AD\u3057\u307E\u3059\u3002\r\n\tlocal
+      equal_x = -0.000001 < vec1.x - vec2.x and vec1.x - vec2.x < 0.000001\r\n\tlocal
+      equal_y = -0.000001 < vec1.y - vec2.y and vec1.y - vec2.y < 0.000001\r\n\tlocal
+      equal_z = -0.000001 < vec1.z - vec2.z and vec1.z - vec2.z < 0.000001\r\n\treturn
+      equal_x and equal_y and equal_z\r\nend\r\n\r\n\r\nfunction_tools.minimum_absolute
       = function(from_array)\r\n\t-- \u914D\u5217\u306E\u7D76\u5BFE\u5024\u304C\u6700\u5C0F\u306E\u30A4\u30F3\u30C7\u30C3\u30AF\u30B9\u3068\uFF0C\u305D\u306E\u5024\u3092\u914D\u5217\u3067\u8FD4\u3057\u307E\u3059\u3002\r\n\tlocal
       result = { }\r\n\tlocal temp_index = 2147483647\r\n\tlocal temp_value = 2147483647\r\n\tfor
       key, value in pairs(from_array) do\r\n\t\t-- \u7D76\u5BFE\u5024\u306B\u5909\u63DB\r\n\t\tlocal
@@ -4062,7 +4195,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2074257293}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1, z: 0.01}
+  m_LocalPosition: {x: 0, y: 0, z: 0.01}
   m_LocalScale: {x: 0.04, y: 0.020000001, z: 0.040000003}
   m_Children: []
   m_Father: {fileID: 1396595458}
@@ -4353,6 +4486,7 @@ GameObject:
   - component: {fileID: 2146861956}
   - component: {fileID: 2146861958}
   - component: {fileID: 2146861957}
+  - component: {fileID: 2146861959}
   m_Layer: 0
   m_Name: ButtonNext
   m_TagString: Untagged
@@ -4368,7 +4502,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2146861955}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1440494618}
@@ -4410,3 +4544,99 @@ MonoBehaviour:
   Attractable: 0
   GroupId: 0
   NodeIndex: 0
+--- !u!82 &2146861959
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146861955}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f7cdb50bf2add6a4181f06300fba5c71, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
