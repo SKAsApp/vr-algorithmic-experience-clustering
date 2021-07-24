@@ -71,6 +71,12 @@ function_tools.average_vec3 = function(from_array)
 end
 
 
+function_tools.add_vec3 = function(vec1, vec2)
+	-- vec3の各成分同士を足します。
+	return Vector3.__new(vec1.x + vec2.x, vec1.y + vec2.y, vec1.z + vec2.z)
+end
+
+
 function_tools.minimum_absolute = function(from_array)
 	-- 配列の絶対値が最小のインデックスと，その値を配列で返します。
 	local result = { }

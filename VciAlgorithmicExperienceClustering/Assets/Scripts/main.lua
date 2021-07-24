@@ -1,7 +1,7 @@
 print("Controller読み込み")
 local Controller = require "controller"
 local controller = Controller.new( )
-controller:initialize( )
+controller:initialise( )
 print("controllerを生成し，初期化しました。")
 
 
@@ -11,6 +11,7 @@ onUse = function(use)
 	print("onUseされ，" .. use .. "が押されました。")
 	if use == "ButtonNext" then
 		controller:on_button_next_use( )
+		return
 	end
 end
 
@@ -18,4 +19,5 @@ end
 updateAll = function( )
 	-- （VCIのイベントハンドラー）全ユーザーでの毎フレーム実行
 	controller:update( )
+	return
 end
