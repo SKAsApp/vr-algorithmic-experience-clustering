@@ -59,14 +59,14 @@ Controller.new = function( )
 
 	instance.__set_random_positions = function(self)
 		-- データを中心オブジェクトを中心にランダムに配置します。
-		local centre_position = self.__centre_object.GetPosition( )
+		local centre_position = self.__centre_object.GetLocalPosition( )
 		for i = 0, 19 do
 			local x = math.random( ) - 0.5
 			local y = math.random( ) - 0.5
 			local z = math.random( ) - 0.5
 			local random_vector = Vector3.__new(x, y, z)
 			self:__set_positions(i, function_tools.add_vec3(random_vector, centre_position))
-			self.__data_objects[i].SetPosition(self.__positions[i])
+			self.__data_objects[i].SetLocalPosition(self.__positions[i])
 		end
 	end
 
@@ -89,7 +89,7 @@ Controller.new = function( )
 		-- データの座標を再取得します。
 		local datas = self.__clustering:get_datas( )
 		for i = 0, 19 do
-			local position = self.__data_objects[i].GetPosition( )
+			local position = self.__data_objects[i].GetLocalPosition( )
 			self:__set_positions(i, position)
 			datas[i]:set_position(position)
 		end
@@ -111,9 +111,10 @@ Controller.new = function( )
 		-- 重心の座標を更新します
 		local is_mean_changed = false
 		for i = 0, 2 do
-			if not function_tools.is_equal_vec3(self.__mean_objetcs[i].GetPosition( ), centers[i]) then
+			if not function_tools.is_equal_vec3(self.__mean_objetcs[i].GetLocalPosition( ), centers[i]) then
 				is_mean_changed = true
-				self.__mean_objetcs[i].SetPosition(centers[i])
+				print("重心" .. i .. ".x差分：" .. self.__mean_objetcs[i].GetLocalPosition( ).x - centers[i].x)
+				self.__mean_objetcs[i].SetLocalPosition(centers[i])
 			end
 		end
 		if not is_mean_changed then
