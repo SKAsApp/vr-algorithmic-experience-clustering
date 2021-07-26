@@ -9,10 +9,12 @@ Controller.new = function( )
 	instance.__clustering = { }
 	instance.__data_objects = { }
 	instance.__mean_objetcs = { }
+	instance.__explanation_objects = { }
 	instance.__positions = { }
 	instance.__previous_positions = { }
 	instance.__centre_object = vci.assets.GetTransform("Centre")
 	instance.__button_count = 0
+	instance.__previous_step = -1
 	instance.__is_finished = false
 
 	instance.__set_positions = function(self, index, value)
@@ -23,12 +25,15 @@ Controller.new = function( )
 	end
 
 	instance.initialise = function(self)
-		-- データと重心のExportTransformを取得
+		-- データと重心と案内板のExportTransformを取得
 		for i = 0, 19 do
 			self.__data_objects[i] = vci.assets.GetTransform("Data (" .. tostring(i) .. ")")
 		end
 		for i = 0, 2 do
 			self.__mean_objetcs[i] = vci.assets.GetTransform("Mean (" .. tostring(i) .. ")")
+		end
+		for i = -1, 4 do
+			self.__explanation_objects[i] = vci.assets.GetTransform("Explanation" .. tostring(i))
 		end
 		self:__initialise_main(false)
 	end
@@ -36,25 +41,49 @@ Controller.new = function( )
 	instance.__initialise_main = function(self, is_reset)
 		-- 初期化メイン処理
 		-- param is_reset Bool: リセットボタンによるものか
-		instance.__button_count = 0
-		instance.__is_finished = false
-		self:__set_initial_positions( )
+		self:__set_initial_positions(is_reset)
 		self:__initialise_state(is_reset)
+		self.__button_count = 0
+		self.__previous_step = -1
+		self.__is_finished = false
 	end
 
-	instance.__set_initial_positions = function(self)
+	instance.__set_initial_positions = function(self, is_reset)
 		-- 呼び出し時は全部上空2 kmに配置します。
+		local vector = Vector3.__new(0, 2000, 0)
 		-- データ
 		for i = 0, 19 do
-			local vector = Vector3.__new(0, 2000, 0)
 			self:__set_positions(i, vector)
 			self.__data_objects[i].SetLocalPosition(vector)
 		end
 		-- 重心
 		for i = 0, 2 do
-			local vector = Vector3.__new(0, 2000, 0)
 			self.__mean_objetcs[i].SetLocalPosition(vector)
 		end
+		-- 案内板
+		if is_reset then
+			self:__change_explanation(self.__previous_step, -1)
+			return
+		end
+		for i = 0, 4 do
+			self.__explanation_objects[i].SetLocalPosition(vector)
+		end
+	end
+
+	instance.__change_explanation = function(self, from, to)
+		-- 案内板を変更します。
+		-- param from Number: 変更前の案内板番号
+		-- param to Number: 変更後の案内板番号
+		local vector = Vector3.__new(0, 2000, 0)
+		local from_position = self.__explanation_objects[from].GetLocalPosition( )
+		local from_scale = self.__explanation_objects[from].GetLocalScale( )
+		local from_rotation = self.__explanation_objects[from].GetLocalRotation( )
+		self.__explanation_objects[from].SetLocalPosition(vector)
+		self.__explanation_objects[to].SetLocalPosition(from_position)
+		self.__explanation_objects[to].SetLocalScale(from_scale)
+		self.__explanation_objects[to].SetLocalRotation(from_rotation)
+		self.__explanation_objects[to].SetVelocity(Vector3.zero)
+		self.__explanation_objects[to].SetAngularVelocity(Vector3.zero)
 	end
 
 	instance.__set_random_positions = function(self)
@@ -70,7 +99,7 @@ Controller.new = function( )
 		end
 	end
 
-	instance.__initialise_state = function(is_reset)
+	instance.__initialise_state = function(self, is_reset)
 		-- 色状態を初期化します。
 		-- param is_reset Bool: リセットボタンによるものか
 		if is_reset then
@@ -120,6 +149,8 @@ Controller.new = function( )
 		if not is_mean_changed then
 			self.__is_finished = true
 			print("収束しました")
+			self:__change_explanation(self.__previous_step, 4)
+			self.__previous_step = 4
 		end
 	end
 
@@ -175,6 +206,8 @@ Controller.new = function( )
 		self:__force_color_change( )
 		self.__clustering = Clustering.new(self.__positions, 3)
 		self.__clustering:initialise( )
+		self:__change_explanation(self.__previous_step, 0)
+		self.__previous_step = 0
 	end
 
 	instance.__force_color_change = function(self)
@@ -192,6 +225,8 @@ Controller.new = function( )
 			clusters[i] = datas[i]:get_cluster( )
 		end
 		self:__set_data_object_color(clusters)
+		self:__change_explanation(self.__previous_step, 1)
+		self.__previous_step = 1
 	end
 
 	instance.__step2 = function(self)
@@ -200,6 +235,10 @@ Controller.new = function( )
 		self.__clustering:calculate_centers( )
 		local centers = self.__clustering:get_centers( )
 		self:__set_mean_object_postion(centers)
+		if not self.__is_finished then
+			self:__change_explanation(self.__previous_step, 2)
+			self.__previous_step = 2
+		end
 	end
 
 	instance.__step3 = function(self)
@@ -212,6 +251,8 @@ Controller.new = function( )
 			clusters[i] = datas[i]:get_cluster( )
 		end
 		self:__set_data_object_color(clusters)
+		self:__change_explanation(self.__previous_step, 3)
+		self.__previous_step = 3
 	end
 
 	instance.on_button_reset_use = function(self)

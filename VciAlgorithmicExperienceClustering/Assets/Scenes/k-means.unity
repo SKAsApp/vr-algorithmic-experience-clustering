@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 43962346}
   - component: {fileID: 43962345}
   m_Layer: 0
-  m_Name: Explanation99-1
+  m_Name: Explanation4-1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2723,7 +2723,7 @@ GameObject:
   - component: {fileID: 1123780830}
   - component: {fileID: 1123780829}
   m_Layer: 0
-  m_Name: Explanation99-2
+  m_Name: Explanation4-2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3568,7 +3568,7 @@ GameObject:
   - component: {fileID: 1339096547}
   - component: {fileID: 1339096546}
   m_Layer: 0
-  m_Name: Explanation99
+  m_Name: Explanation4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5415,10 +5415,10 @@ MonoBehaviour:
   Meta:
     title: "VCI\u30A2\u30EB\u30B4\u30EA\u30BA\u30E0\u4F53\u9A13\u300C\u975E\u968E\u5C64\u578B\u30AF\u30E9\u30B9\u30BF\u30EA\u30F3\u30B0\u300D"
     author: "SKA\u2019s Web"
-    contactInformation: 
+    contactInformation: https://twitter.com/SK_Animation
     reference: 
     thumbnail: {fileID: 0}
-    version: "2.0.1\u03B13 is_equal\u6761\u4EF6\u4FEE\u6B63"
+    version: "2.0.2 \u6848\u5185\u677F\u8A2D\u7F6E"
     description: "\u30C7\u30FC\u30BF\u5206\u985E\u306E\u305F\u3081\u306E\u6559\u5E2B\u306A\u3057\u5B66\u7FD2\u624B\u6CD5\u300C\u975E\u968E\u5C64\u578B\u30AF\u30E9\u30B9\u30BF\u30EA\u30F3\u30B0\u300D\u3092\u4F53\u9A13\u3067\u304D\u307E\u3059\u3002"
     exporterVersion: 0.32
     specVersion: 
@@ -5453,34 +5453,43 @@ MonoBehaviour:
     source: "local Clustering = require \"clustering\"\r\nlocal function_tools =
       require \"function_tools\"\r\n\r\n\r\n-- Controller\u30AF\u30E9\u30B9\uFF08\uFF1F\uFF09\r\nlocal
       Controller = { }\r\nController.new = function( )\r\n\tlocal instance = { }\r\n\tinstance.__clustering
-      = { }\r\n\tinstance.__data_objects = { }\r\n\tinstance.__mean_objetcs = { }\r\n\tinstance.__positions
-      = { }\r\n\tinstance.__previous_positions = { }\r\n\tinstance.__centre_object
-      = vci.assets.GetTransform(\"Centre\")\r\n\tinstance.__button_count = 0\r\n\tinstance.__is_finished
-      = false\r\n\r\n\tinstance.__set_positions = function(self, index, value)\r\n\t\t--
-      positions\u3092previous_positions\u306B\u4FDD\u6301\u3057\u3001positions\u3092\u66F4\u65B0\u3057\u307E\u3059\u3002\r\n\t\t--
+      = { }\r\n\tinstance.__data_objects = { }\r\n\tinstance.__mean_objetcs = { }\r\n\tinstance.__explanation_objects
+      = { }\r\n\tinstance.__positions = { }\r\n\tinstance.__previous_positions =
+      { }\r\n\tinstance.__centre_object = vci.assets.GetTransform(\"Centre\")\r\n\tinstance.__button_count
+      = 0\r\n\tinstance.__previous_step = -1\r\n\tinstance.__is_finished = false\r\n\r\n\tinstance.__set_positions
+      = function(self, index, value)\r\n\t\t-- positions\u3092previous_positions\u306B\u4FDD\u6301\u3057\u3001positions\u3092\u66F4\u65B0\u3057\u307E\u3059\u3002\r\n\t\t--
       param index Number: positions\u914D\u5217\u306E\u30A4\u30F3\u30C7\u30C3\u30AF\u30B9\r\n\t\tself.__previous_positions[index]
       = self.__positions[index]\r\n\t\tself.__positions[index] = value\r\n\tend\r\n\r\n\tinstance.initialise
-      = function(self)\r\n\t\t-- \u30C7\u30FC\u30BF\u3068\u91CD\u5FC3\u306EExportTransform\u3092\u53D6\u5F97\r\n\t\tfor
+      = function(self)\r\n\t\t-- \u30C7\u30FC\u30BF\u3068\u91CD\u5FC3\u3068\u6848\u5185\u677F\u306EExportTransform\u3092\u53D6\u5F97\r\n\t\tfor
       i = 0, 19 do\r\n\t\t\tself.__data_objects[i] = vci.assets.GetTransform(\"Data
       (\" .. tostring(i) .. \")\")\r\n\t\tend\r\n\t\tfor i = 0, 2 do\r\n\t\t\tself.__mean_objetcs[i]
-      = vci.assets.GetTransform(\"Mean (\" .. tostring(i) .. \")\")\r\n\t\tend\r\n\t\tself:__initialise_main(false)\r\n\tend\r\n\r\n\tinstance.__initialise_main
+      = vci.assets.GetTransform(\"Mean (\" .. tostring(i) .. \")\")\r\n\t\tend\r\n\t\tfor
+      i = -1, 4 do\r\n\t\t\tself.__explanation_objects[i] = vci.assets.GetTransform(\"Explanation\"
+      .. tostring(i))\r\n\t\tend\r\n\t\tself:__initialise_main(false)\r\n\tend\r\n\r\n\tinstance.__initialise_main
       = function(self, is_reset)\r\n\t\t-- \u521D\u671F\u5316\u30E1\u30A4\u30F3\u51E6\u7406\r\n\t\t--
-      param is_reset Bool: \u30EA\u30BB\u30C3\u30C8\u30DC\u30BF\u30F3\u306B\u3088\u308B\u3082\u306E\u304B\r\n\t\tinstance.__button_count
-      = 0\r\n\t\tinstance.__is_finished = false\r\n\t\tself:__set_initial_positions(
-      )\r\n\t\tself:__initialise_state(is_reset)\r\n\tend\r\n\r\n\tinstance.__set_initial_positions
-      = function(self)\r\n\t\t-- \u547C\u3073\u51FA\u3057\u6642\u306F\u5168\u90E8\u4E0A\u7A7A2
-      km\u306B\u914D\u7F6E\u3057\u307E\u3059\u3002\r\n\t\t-- \u30C7\u30FC\u30BF\r\n\t\tfor
-      i = 0, 19 do\r\n\t\t\tlocal vector = Vector3.__new(0, 2000, 0)\r\n\t\t\tself:__set_positions(i,
+      param is_reset Bool: \u30EA\u30BB\u30C3\u30C8\u30DC\u30BF\u30F3\u306B\u3088\u308B\u3082\u306E\u304B\r\n\t\tself:__set_initial_positions(is_reset)\r\n\t\tself:__initialise_state(is_reset)\r\n\t\tself.__button_count
+      = 0\r\n\t\tself.__previous_step = -1\r\n\t\tself.__is_finished = false\r\n\tend\r\n\r\n\tinstance.__set_initial_positions
+      = function(self, is_reset)\r\n\t\t-- \u547C\u3073\u51FA\u3057\u6642\u306F\u5168\u90E8\u4E0A\u7A7A2
+      km\u306B\u914D\u7F6E\u3057\u307E\u3059\u3002\r\n\t\tlocal vector = Vector3.__new(0,
+      2000, 0)\r\n\t\t-- \u30C7\u30FC\u30BF\r\n\t\tfor i = 0, 19 do\r\n\t\t\tself:__set_positions(i,
       vector)\r\n\t\t\tself.__data_objects[i].SetLocalPosition(vector)\r\n\t\tend\r\n\t\t--
-      \u91CD\u5FC3\r\n\t\tfor i = 0, 2 do\r\n\t\t\tlocal vector = Vector3.__new(0,
-      2000, 0)\r\n\t\t\tself.__mean_objetcs[i].SetLocalPosition(vector)\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__set_random_positions
+      \u91CD\u5FC3\r\n\t\tfor i = 0, 2 do\r\n\t\t\tself.__mean_objetcs[i].SetLocalPosition(vector)\r\n\t\tend\r\n\t\t--
+      \u6848\u5185\u677F\r\n\t\tif is_reset then\r\n\t\t\tself:__change_explanation(self.__previous_step,
+      -1)\r\n\t\t\treturn\r\n\t\tend\r\n\t\tfor i = 0, 4 do\r\n\t\t\tself.__explanation_objects[i].SetLocalPosition(vector)\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__change_explanation
+      = function(self, from, to)\r\n\t\t-- \u6848\u5185\u677F\u3092\u5909\u66F4\u3057\u307E\u3059\u3002\r\n\t\t--
+      param from Number: \u5909\u66F4\u524D\u306E\u6848\u5185\u677F\u756A\u53F7\r\n\t\t--
+      param to Number: \u5909\u66F4\u5F8C\u306E\u6848\u5185\u677F\u756A\u53F7\r\n\t\tlocal
+      vector = Vector3.__new(0, 2000, 0)\r\n\t\tlocal from_position = self.__explanation_objects[from].GetLocalPosition(
+      )\r\n\t\tlocal from_scale = self.__explanation_objects[from].GetLocalScale(
+      )\r\n\t\tlocal from_rotation = self.__explanation_objects[from].GetLocalRotation(
+      )\r\n\t\tself.__explanation_objects[from].SetLocalPosition(vector)\r\n\t\tself.__explanation_objects[to].SetLocalPosition(from_position)\r\n\t\tself.__explanation_objects[to].SetLocalScale(from_scale)\r\n\t\tself.__explanation_objects[to].SetLocalRotation(from_rotation)\r\n\t\tself.__explanation_objects[to].SetVelocity(Vector3.zero)\r\n\t\tself.__explanation_objects[to].SetAngularVelocity(Vector3.zero)\r\n\tend\r\n\r\n\tinstance.__set_random_positions
       = function(self)\r\n\t\t-- \u30C7\u30FC\u30BF\u3092\u4E2D\u5FC3\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u3092\u4E2D\u5FC3\u306B\u30E9\u30F3\u30C0\u30E0\u306B\u914D\u7F6E\u3057\u307E\u3059\u3002\r\n\t\tlocal
       centre_position = self.__centre_object.GetLocalPosition( )\r\n\t\tfor i = 0,
       19 do\r\n\t\t\tlocal x = math.random( ) - 0.5\r\n\t\t\tlocal y = math.random(
       ) - 0.5\r\n\t\t\tlocal z = math.random( ) - 0.5\r\n\t\t\tlocal random_vector
       = Vector3.__new(x, y, z)\r\n\t\t\tself:__set_positions(i, function_tools.add_vec3(random_vector,
       centre_position))\r\n\t\t\tself.__data_objects[i].SetLocalPosition(self.__positions[i])\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__initialise_state
-      = function(is_reset)\r\n\t\t-- \u8272\u72B6\u614B\u3092\u521D\u671F\u5316\u3057\u307E\u3059\u3002\r\n\t\t--
+      = function(self, is_reset)\r\n\t\t-- \u8272\u72B6\u614B\u3092\u521D\u671F\u5316\u3057\u307E\u3059\u3002\r\n\t\t--
       param is_reset Bool: \u30EA\u30BB\u30C3\u30C8\u30DC\u30BF\u30F3\u306B\u3088\u308B\u3082\u306E\u304B\r\n\t\tif
       is_reset then\r\n\t\t\tfor i = 0, 19 do\r\n\t\t\t\tvci.state.Set(\"data \"
       .. i .. \"_color\", 0)\r\n\t\t\tend\r\n\t\t\treturn\r\n\t\tend\r\n\t\tfor i
@@ -5499,7 +5508,8 @@ MonoBehaviour:
       ), centers[i]) then\r\n\t\t\t\tis_mean_changed = true\r\n\t\t\t\tprint(\"\u91CD\u5FC3\"
       .. i .. \".x\u5DEE\u5206\uFF1A\" .. self.__mean_objetcs[i].GetLocalPosition(
       ).x - centers[i].x)\r\n\t\t\t\tself.__mean_objetcs[i].SetLocalPosition(centers[i])\r\n\t\t\tend\r\n\t\tend\r\n\t\tif
-      not is_mean_changed then\r\n\t\t\tself.__is_finished = true\r\n\t\t\tprint(\"\u53CE\u675F\u3057\u307E\u3057\u305F\")\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__set_data_object_color
+      not is_mean_changed then\r\n\t\t\tself.__is_finished = true\r\n\t\t\tprint(\"\u53CE\u675F\u3057\u307E\u3057\u305F\")\r\n\t\t\tself:__change_explanation(self.__previous_step,
+      4)\r\n\t\t\tself.__previous_step = 4\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__set_data_object_color
       = function(self, clusters)\r\n\t\t-- \u30AF\u30E9\u30B9\u30BF\u30FC\u756A\u53F7\u306B\u5408\u308F\u305B\u3066\uFF0CData\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u306E\u8272\u3092\u5909\u66F4\u3057\u307E\u3059\u3002\r\n\t\t--
       param clusters: \u30AF\u30E9\u30B9\u30BF\u30FC\u756A\u53F7\u306E\u914D\u5217\r\n\t\tfor
       i = 0, 19 do\r\n\t\t\tlocal previous_color = vci.state.Get(\"data \" .. i ..
@@ -5518,18 +5528,23 @@ MonoBehaviour:
       \u30B9\u30C6\u30C3\u30D70\uFF1A\u30E9\u30F3\u30C0\u30E0\u306B\u914D\u7F6E\u3057\u3001clustering\u30A4\u30F3\u30B9\u30BF\u30F3\u30B9\u306E\u521D\u671F\u5316\r\n\t\tprint(\"\u30B9\u30C6\u30C3\u30D70\uFF1A\u30E9\u30F3\u30C0\u30E0\u306B\u30C7\u30FC\u30BF\u3092\u914D\u7F6E\")\r\n\t\tself:__sound_next(
       )\r\n\t\tself:__set_random_positions( )\r\n\t\tself:__force_color_change( )\r\n\t\tself.__clustering
       = Clustering.new(self.__positions, 3)\r\n\t\tself.__clustering:initialise(
-      )\r\n\tend\r\n\r\n\tinstance.__force_color_change = function(self)\r\n\t\t--
+      )\r\n\t\tself:__change_explanation(self.__previous_step, 0)\r\n\t\tself.__previous_step
+      = 0\r\n\tend\r\n\r\n\tinstance.__force_color_change = function(self)\r\n\t\t--
       \u5F37\u5236\u7684\u306B\u8272\u306E\u66F4\u65B0\u3092\u304B\u3051\u307E\u3059\u3002\r\n\t\tvci.state.Set(\"force_init_color\",
       true)\r\n\tend\r\n\r\n\tinstance.__step1 = function(self)\r\n\t\t-- \u30B9\u30C6\u30C3\u30D71\uFF1A\u30E9\u30F3\u30C0\u30E0\u306B\u30B0\u30EB\u30FC\u30D7\u5206\u3051\r\n\t\tprint(\"\u30B9\u30C6\u30C3\u30D71\u3000\u30E9\u30F3\u30C0\u30E0\u306B\u30B0\u30EB\u30FC\u30D7\u5206\u3051\")\r\n\t\tlocal
       datas = self.__clustering:get_datas( )\r\n\t\tprint(\"\u30C7\u30FC\u30BF\u6570\uFF1A\"
       .. #datas + 1 .. \" \u500B\")\r\n\t\tlocal clusters = { }\r\n\t\tfor i = 0,
-      #datas do\r\n\t\t\tclusters[i] = datas[i]:get_cluster( )\r\n\t\tend\r\n\t\tself:__set_data_object_color(clusters)\r\n\tend\r\n\r\n\tinstance.__step2
-      = function(self)\r\n\t\t-- \u30B9\u30C6\u30C3\u30D72\uFF1A\u5404\u30B0\u30EB\u30FC\u30D7\u306E\u5E73\u5747\u3092\u6C42\u3081\u308B\r\n\t\tprint(\"\u30B9\u30C6\u30C3\u30D72\u3000\u5404\u30B0\u30EB\u30FC\u30D7\u306E\u5E73\u5747\u3092\u6C42\u3081\u308B\")\r\n\t\tself.__clustering:calculate_centers(
-      )\r\n\t\tlocal centers = self.__clustering:get_centers( )\r\n\t\tself:__set_mean_object_postion(centers)\r\n\tend\r\n\r\n\tinstance.__step3
+      #datas do\r\n\t\t\tclusters[i] = datas[i]:get_cluster( )\r\n\t\tend\r\n\t\tself:__set_data_object_color(clusters)\r\n\t\tself:__change_explanation(self.__previous_step,
+      1)\r\n\t\tself.__previous_step = 1\r\n\tend\r\n\r\n\tinstance.__step2 = function(self)\r\n\t\t--
+      \u30B9\u30C6\u30C3\u30D72\uFF1A\u5404\u30B0\u30EB\u30FC\u30D7\u306E\u5E73\u5747\u3092\u6C42\u3081\u308B\r\n\t\tprint(\"\u30B9\u30C6\u30C3\u30D72\u3000\u5404\u30B0\u30EB\u30FC\u30D7\u306E\u5E73\u5747\u3092\u6C42\u3081\u308B\")\r\n\t\tself.__clustering:calculate_centers(
+      )\r\n\t\tlocal centers = self.__clustering:get_centers( )\r\n\t\tself:__set_mean_object_postion(centers)\r\n\t\tif
+      not self.__is_finished then\r\n\t\t\tself:__change_explanation(self.__previous_step,
+      2)\r\n\t\t\tself.__previous_step = 2\r\n\t\tend\r\n\tend\r\n\r\n\tinstance.__step3
       = function(self)\r\n\t\t-- \u30B9\u30C6\u30C3\u30D73\uFF1A\u5404\u30C7\u30FC\u30BF\u306E\u30B0\u30EB\u30FC\u30D7\u518D\u5272\u5F53\u3066\r\n\t\tprint(\"\u30B9\u30C6\u30C3\u30D73\u3000\u5404\u30C7\u30FC\u30BF\u306E\u30B0\u30EB\u30FC\u30D7\u3092\u518D\u5272\u5F53\u3066\")\r\n\t\tself.__clustering:re_calculate_cluster(
       )\r\n\t\tlocal datas = self.__clustering:get_datas( )\r\n\t\tlocal clusters
       = { }\r\n\t\tfor i = 0, #datas do\r\n\t\t\tclusters[i] = datas[i]:get_cluster(
-      )\r\n\t\tend\r\n\t\tself:__set_data_object_color(clusters)\r\n\tend\r\n\r\n\tinstance.on_button_reset_use
+      )\r\n\t\tend\r\n\t\tself:__set_data_object_color(clusters)\r\n\t\tself:__change_explanation(self.__previous_step,
+      3)\r\n\t\tself.__previous_step = 3\r\n\tend\r\n\r\n\tinstance.on_button_reset_use
       = function(self)\r\n\t\t-- \u30EA\u30BB\u30C3\u30C8\u30DC\u30BF\u30F3\u3092\u62BC\u3057\u305F\u3068\u304D\u3002\r\n\t\tif
       self.__button_count == 0 then\r\n\t\t\treturn\r\n\t\tend\r\n\t\tself:__sound_reset(
       )\r\n\t\tself:__initialise_main(true)\r\n\t\tself.__button_count = 0\r\n\t\tprint(\"\u30EA\u30BB\u30C3\u30C8\u3057\u307E\u3057\u305F\")\r\n\tend\r\n\r\n\tinstance.__sound_reset
