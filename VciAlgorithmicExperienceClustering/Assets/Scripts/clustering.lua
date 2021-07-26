@@ -24,7 +24,7 @@ Clustering.new = function(positions, k)
 		return self.__centers
 	end
 
-	instance.initialize = function(self)
+	instance.initialise = function(self)
 		-- テキトーにクラスター番号を割り振ります。
 		print("initialize：テキトーにクラスター番号を割り振ります。")
 		local separation = math.floor(self.__length / self.__k)

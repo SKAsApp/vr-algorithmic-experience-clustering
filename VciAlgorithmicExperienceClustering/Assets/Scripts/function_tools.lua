@@ -71,6 +71,30 @@ function_tools.average_vec3 = function(from_array)
 end
 
 
+function_tools.add_vec3 = function(vec1, vec2)
+	-- vec3の各成分同士を足します。
+	return Vector3.__new(vec1.x + vec2.x, vec1.y + vec2.y, vec1.z + vec2.z)
+end
+
+
+function_tools.is_equal_vec3 = function(vec1, vec2)
+	-- vec3の各成分が等しいか判断します。0.1 mm未満を等しいと判断します。
+	local equal_x = (vec1.x - vec2.x) * (vec1.x - vec2.x) < (1.0e-4) * (1.0e-4)
+	local equal_y = (vec1.y - vec2.y) * (vec1.y - vec2.y) < (1.0e-4) * (1.0e-4)
+	local equal_z = (vec1.z - vec2.z) * (vec1.z - vec2.z) < (1.0e-4) * (1.0e-4)
+	return equal_x and equal_y and equal_z
+end
+
+
+function_tools.is_equal_vec3_with_threshold = function(vec1, vec2, threshold)
+	-- vec3の各成分が等しいか判断します。threshold m未満を等しいと判断します。
+	local equal_x = (vec1.x - vec2.x) * (vec1.x - vec2.x) < threshold * threshold
+	local equal_y = (vec1.y - vec2.y) * (vec1.y - vec2.y) < threshold * threshold
+	local equal_z = (vec1.z - vec2.z) * (vec1.z - vec2.z) < threshold * threshold
+	return equal_x and equal_y and equal_z
+end
+
+
 function_tools.minimum_absolute = function(from_array)
 	-- 配列の絶対値が最小のインデックスと，その値を配列で返します。
 	local result = { }
