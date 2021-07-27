@@ -10,15 +10,15 @@ This is a VR item which can experience machine learning algorithms. You can expe
 ## How to Use
 
 - The light blue ball is a data (it can be moved).  
-	[<img src="./Documents/Data.png" title="Data" style="max-width: 128px;" />](./Documents/Data.png)
+	[<img src="./Documents/Data.png" title="Data" width="128px" />](./Documents/Data.png)
 - The orange button in the yellow tube is the “Next” button.  
-	[<img src="./Documents/次へボタン.png" title="“Next” Button" style="max-width: 128px;" />](./Documents/次へボタン.png)
+	[<img src="./Documents/次へボタン.png" title="“Next” Button" width="128px" />](./Documents/次へボタン.png)
 - The button in the grey tube is the “Reset” button.  
-	[<img src="./Documents/リセットボタン.png" title="“Reset” Button" style="max-width: 128px;" />](./Documents/リセットボタン.png)
+	[<img src="./Documents/リセットボタン.png" title="“Reset” Button" width="128px" />](./Documents/リセットボタン.png)
 - The board marked “中心” is the “Centre Object”.  
-	[<img src="./VciAlgorithmicExperienceClustering/Assets/Images/Center.png" title="Centre Object" style="max-width: 195px;" />](./VciAlgorithmicExperienceClustering/Assets/Images/Center.png)
+	[<img src="./VciAlgorithmicExperienceClustering/Assets/Images/Center.png" title="Centre Object" width="195px" />](./VciAlgorithmicExperienceClustering/Assets/Images/Center.png)
 - The light blue board is the “Information Board”.  
-	[<img src="./VciAlgorithmicExperienceClustering/Assets/Images/Explanation-1.png" title="Information Board" style="max-width: 256px;" />](./VciAlgorithmicExperienceClustering/Assets/Images/Explanation-1.png)
+	[<img src="./VciAlgorithmicExperienceClustering/Assets/Images/Explanation-1.png" title="Information Board" width="256px" />](./VciAlgorithmicExperienceClustering/Assets/Images/Explanation-1.png)
 
 1. Place the “Centre Object” at the position where you want to generate data.
 1. When you press (grip) the “Next” button, data will be generated. The data can be moved.
@@ -41,7 +41,7 @@ This is a VR item which can experience machine learning algorithms. You can expe
 
 - **(Event)** This will be on display at “夏キャスマーケット2021” (Summer VirtualCast Market 2021).
 	- Press on the image below to go to “キャスマーケット” (VirtualCast Market) website.
-	- [<img src="https://id.pokemori.jp/virtualcast-fes/market5/images/virtualcast-fes-market5-poster-wide.png" title="夏キャスマーケット2021" style="max-width: 640px;" />](https://id.pokemori.jp/virtualcast-fes/market5/)
+	- [<img src="https://id.pokemori.jp/virtualcast-fes/market5/images/virtualcast-fes-market5-poster-wide.png" title="夏キャスマーケット2021" width="640px" />](https://id.pokemori.jp/virtualcast-fes/market5/)
 
 
 ## Distribution
