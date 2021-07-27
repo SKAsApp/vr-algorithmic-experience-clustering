@@ -10,15 +10,15 @@ VRで機械学習のアルゴリズムを体験できるヤツの第1弾です�
 ## 使い方
 
 - 水色の玉がデータ（移動可能です）。  
-	[<img src="./Documents/Data.png" title="データ" style="max-width: 128px;" />](./Documents/Data.png)
+	[<img src="./Documents/Data.png" title="データ" width="128px" />](./Documents/Data.png)
 - 黄色い筒に入ったオレンジのボタンが「次へ」ボタンです。  
-	[<img src="./Documents/次へボタン.png" title="「次へ」ボタン" style="max-width: 128px;" />](./Documents/次へボタン.png)
+	[<img src="./Documents/次へボタン.png" title="「次へ」ボタン" width="128px" />](./Documents/次へボタン.png)
 - 灰色の筒に入ったボタンが「リセット」ボタンです。  
-	[<img src="./Documents/リセットボタン.png" title="「リセット」ボタン" style="max-width: 128px;" />](./Documents/リセットボタン.png)
+	[<img src="./Documents/リセットボタン.png" title="「リセット」ボタン" width="128px" />](./Documents/リセットボタン.png)
 - 中心と書かれた板が「中心オブジェクト」です。  
-	[<img src="./VciAlgorithmicExperienceClustering/Assets/Images/Center.png" title="中心オブジェクト" style="max-width: 195px;" />](./VciAlgorithmicExperienceClustering/Assets/Images/Center.png)
+	[<img src="./VciAlgorithmicExperienceClustering/Assets/Images/Center.png" title="中心オブジェクト" width="195px" />](./VciAlgorithmicExperienceClustering/Assets/Images/Center.png)
 - 水色の板が「案内板」です。  
-	[<img src="./VciAlgorithmicExperienceClustering/Assets/Images/Explanation-1.png" title="案内板" style="max-width: 256px;" />](./VciAlgorithmicExperienceClustering/Assets/Images/Explanation-1.png)
+	[<img src="./VciAlgorithmicExperienceClustering/Assets/Images/Explanation-1.png" title="案内板" width="256px" />](./VciAlgorithmicExperienceClustering/Assets/Images/Explanation-1.png)
 
 1. データを生成したい位置に「中心オブジェクト」を置きます。
 1. 「次へ」ボタンを押すと（グリップすると）、データが生成されます。データは自由に動かせます。
@@ -38,7 +38,7 @@ VRで機械学習のアルゴリズムを体験できるヤツの第1弾です�
 	- YouTube：[https://youtu.be/UO62wXaPRpg](https://youtu.be/UO62wXaPRpg)
 - **（イベント）** 「夏キャスマーケット2021」に出展します。
 	- 下の画像を押すとキャスマーケットのサイトに飛びます。
-	- [<img src="https://id.pokemori.jp/virtualcast-fes/market5/images/virtualcast-fes-market5-poster-wide.png" title="夏キャスマーケット2021" style="max-width: 640px;" />](https://id.pokemori.jp/virtualcast-fes/market5/)
+	- [<img src="https://id.pokemori.jp/virtualcast-fes/market5/images/virtualcast-fes-market5-poster-wide.png" title="夏キャスマーケット2021" width="640px" />](https://id.pokemori.jp/virtualcast-fes/market5/)
 
 
 ## 配布先
